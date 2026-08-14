@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  gpu-check:
+    image: nvidia/cuda:12.3.0-base-ubuntu22.04
+    container_name: gpu-check
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: always
+    depends_on:
+      - gpu-check
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: 16gb
+
+volumes:
+  ollama_data:
