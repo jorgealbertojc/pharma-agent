@@ -10,8 +10,9 @@ dependencies = [
     "langchain-ollama>=1.1.0",
     "langchain-openai>=1.4.2",
     "langchain-pinecone>=0.2.13",
-    "pinecone-client>=6.0.0",
+    "pinecone>=7.3.0",
     "pydantic-settings>=2.14.2",
+    "requests>=2.34.2",
     "rich>=15.0.0",
     "tiktoken>=0.13.0",
 ]
