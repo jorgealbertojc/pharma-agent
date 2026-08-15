@@ -10,9 +10,7 @@ from pinecone import Pinecone
 from rich.console import Console
 from rich.markdown import Markdown
 
-
 load_dotenv()
-
 
 # ------------------------------------------------------------
 # Configuration
@@ -26,7 +24,6 @@ temperature = float(os.getenv("IA_MODEL_TEMPERATURE", "0"))
 
 pinecone_host = os.getenv("PINECONE_HOST")
 
-
 # ------------------------------------------------------------
 # Embeddings
 # ------------------------------------------------------------
@@ -35,7 +32,6 @@ embeddings = OllamaEmbeddings(
     model=embedding_model,
     base_url=ollama_host
 )
-
 
 # ------------------------------------------------------------
 # Pinecone Local
@@ -60,7 +56,6 @@ retriever = vectorstore.as_retriever(
     }
 )
 
-
 # ------------------------------------------------------------
 # Language model
 # ------------------------------------------------------------
@@ -71,7 +66,6 @@ model = ChatOpenAI(
     api_key=api_key,
     temperature=temperature
 )
-
 
 # ------------------------------------------------------------
 # RAG prompt
@@ -89,7 +83,6 @@ Pregunta: {question}
 Respuesta en Markdown:
 """)
 
-
 # ------------------------------------------------------------
 # RAG chain
 # ------------------------------------------------------------
@@ -100,7 +93,6 @@ chain = (
     | model
     | StrOutputParser()
 )
-
 
 # ------------------------------------------------------------
 # Query
@@ -115,9 +107,7 @@ if not question:
 
 print("Procesando...")
 
-
 answer = chain.invoke(question)
-
 
 # ------------------------------------------------------------
 # Output
