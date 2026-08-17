@@ -12,6 +12,7 @@ dependencies = [
     "langchain-pinecone>=0.2.13",
     "pinecone>=7.3.0",
     "pydantic-settings>=2.14.2",
+    "redis>=8.1.0",
     "requests>=2.34.2",
     "rich>=15.0.0",
     "tiktoken>=0.13.0",

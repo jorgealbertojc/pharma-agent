@@ -9,8 +9,8 @@ from app.langchain.memory import BufferMemory
 def test_memory():
     print("🧪 Probando memoria conversacional BufferMemory...\n")
 
-    # 1. Crear memoria con límite de 3 mensajes
-    memory = BufferMemory(max_messages=3)
+    # 1. Crear memoria con límite de 4 mensajes
+    memory = BufferMemory(max_messages=4)
 
     # 2. Añadir mensajes de ejemplo
     memory.add_message("user", "Hola, ¿quién es el protagonista de El perfume?")
