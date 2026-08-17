@@ -1,0 +1,74 @@
+medication-agent/                     # Raíz del proyecto
+├── .env.example                       # Variables de entorno (API keys, DB URLs)
+├── .gitignore                         # Archivos ignorados por Git
+├── docker-compose.yml                 # Orquesta PostgreSQL (memoria) y Qdrant/Chroma (vector DB)
+├── Dockerfile                         # Imagen para el agente (FastAPI + workers)
+├── pyproject.toml                     # Dependencias y configuración del proyecto (poetry)
+├── requirements.txt                   # Alternativa a pyproject.toml para pip
+├── README.md                          # Instrucciones rápidas de setup y uso
+│
+├── data/                              # Datos estáticos y persistencia local
+│   ├── raw/                           # Documentos originales (PDFs, textos, CSV con info de medicamentos)
+│   ├── processed/                     # Datos limpios y estructurados (JSONL con metadatos)
+│   └── vector_store/                  # Persistencia local de la BD vectorial (ej. Chroma)
+│
+├── tests/                             # Pruebas unitarias e integración
+│   ├── test_retriever.py
+│   ├── test_agent.py
+│   └── test_memory.py
+│
+└── src/                               # Código fuente principal
+    ├── __init__.py                    # Marca src como paquete Python
+    ├── main.py                        # Punto de entrada: arranca API o CLI de prueba
+    │
+    ├── api/                           # Capa de exposición (REST / WebSocket)
+    │   ├── __init__.py
+    │   ├── dependencies.py            # Inyección de dependencias (get_agent, get_store, get_checkpointer)
+    │   ├── routes.py                  # Endpoints: /chat (stream), /history (memoria), /health
+    │   └── models.py                  # Pydantic schemas para requests/responses (AskRequest, AnswerResponse)
+    │
+    ├── core/                          # Configuración global y utilidades base
+    │   ├── __init__.py
+    │   ├── config.py                  # Carga variables de entorno (Settings class con Pydantic)
+    │   └── logging.py                 # Configuración de logs estructurados (JSON o texto)
+    │
+    ├── agents/                        # Definición del grafo LangGraph
+    │   ├── __init__.py
+    │   ├── state.py                   # TypedDict del estado del agente (messages, context, drug_entities, ...)
+    │   ├── graph.py                   # Construcción del StateGraph: añade nodos, aristas y compila con checkpointer
+    │   ├── nodes.py                   # Funciones nodo: agent (LLM), tools (ejecuta herramientas), router (decide fin o continuar)
+    │   └── edges.py                   # Funciones condicionales para las aristas (ej. "tool_condition" -> fin o llama a tools)
+    │
+    ├── tools/                         # Herramientas que el agente puede invocar
+    │   ├── __init__.py
+    │   ├── retrieval_tool.py          # Herramienta principal: ejecuta RAG sobre la BD vectorial (busca dosis, duración, sustitutos)
+    │   ├── drug_lookup_tool.py        # Busca por nombre comercial y devuelve componente activo (principio activo)
+    │   └── generic_suggester.py       # Dado un componente, encuentra genéricos equivalentes y precios relativos
+    │
+    ├── rag/                           # Pipeline de Retrieval-Augmented Generation
+    │   ├── __init__.py
+    │   ├── loader.py                  # Carga documentos desde data/raw/ (PDF, CSV, HTML) y extrae metadatos (nombre, laboratorio)
+    │   ├── splitter.py                # Divide documentos en chunks (recursive, semántico o por secciones)
+    │   ├── embedder.py                # Inicializa modelo de embeddings (OpenAI, local, etc.)
+    │   ├── vector_store.py            # Cliente de la BD vectorial (Chroma, PGVector, Qdrant) con métodos add_docs y similarity_search
+    │   └── retriever.py               # Wrapper que convierte la búsqueda en un formato útil para el agente (combina contexto + metadatos)
+    │
+    ├── memory/                        # Gestión de memoria (corta y larga duración)
+    │   ├── __init__.py
+    │   ├── checkpointer.py            # Inicializa el checkpointer (PostgresSaver o MemorySaver) para guardar estados del grafo
+    │   └── store.py                   # Inicializa el Store de LangGraph (memoria a largo plazo) para guardar preferencias de usuario y datos históricos
+    │
+    ├── models/                        # Capa de modelos LLM y prompts
+    │   ├── __init__.py
+    │   ├── llm.py                     # Fábrica de modelos (ChatOpenAI, ChatAnthropic) con temperatura y streaming
+    │   └── prompts.py                 # Plantillas de prompts del sistema (system_prompt, human_prompt, output_parser)
+    │
+    ├── schemas/                       # Modelos de datos de dominio (independientes de la API)
+    │   ├── __init__.py
+    │   ├── medication.py              # Entidad Medicamento (nombre, componente, dosis, duracion_max, sustitutos, presentaciones)
+    │   └── conversation.py            # Modelo para historial de conversación (Thread ID, user_id, mensajes)
+    │
+    └── utils/                         # Funciones auxiliares
+        ├── __init__.py
+        ├── text_processing.py         # Limpieza de texto, extracción de entidades con expresiones regulares
+        └── validation.py              # Validadores de dosis, duración y nombres de fármacos (contra efectos nocivos)
