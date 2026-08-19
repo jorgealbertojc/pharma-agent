@@ -1,8 +1,4 @@
 from app.config import settings
-import sys
+import json
 
-print(sys.path)
-
-print(settings.debug)
-print(settings.ollama_host)
-print(settings.log_level)
+print(json.dumps(settings.model_dump(), indent=4, ensure_ascii=False))
