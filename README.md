@@ -1,120 +1,219 @@
-# lab.jorgealberto.jaime.pharma
+# 🧪 Pharma Agent Lab - lab.jorgealberto.jaime.pharma
 
-## Estructura de Archivos y Documentos
+Laboratorio para construir un agente conversacional farmacéutico con RAG, memoria persistente e inventario en tiempo real. El sistema integra **Ollama**, **Pinecone**, **Redis**, **LangChain** y **LangGraph** para ofrecer respuestas contextuales, sugerencias de sobreventa y consultas sobre medicamentos.
 
-### Estructura de Archivos
+---
 
-```text
-.
-├── .env
+## 🚀 Requisitos
+
+- Docker y Docker Compose
+- Python 3.12+
+- GPU NVIDIA (opcional, para aceleración de Ollama)
+- Git (para clonar el repositorio)
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+pharma-agent/
+├── .env                         # Variables de entorno (configuración)
 ├── .gitignore
-├── pyproject.toml
-├── README.md
-├── docker-compose.yml          # Redis + Pinecone + Ollama
+├── pyproject.toml               # Dependencias y configuración del proyecto
+├── README.md                    # Este archivo
+├── docker-compose.yml           # Servicios: ollama, pinecone, redis, webdis
 │
-├── src/
+├── docker/                      # Archivos de configuración para contenedores
+│   └── webdis.json              # Configuración de Webdis (apunta a Redis)
+│
+├── src/                         # Código fuente principal
 │   ├── __init__.py
 │   │
-│   ├── core/                   # Capa fundamental
+│   ├── core/                    # Capa fundamental
 │   │   ├── __init__.py
-│   │   ├── config.py           # Pydantic Settings
-│   │   ├── models.py           # Pydantic models (Medicamento, Inventario, etc.)
-│   │   └── exceptions.py       # Excepciones personalizadas
+│   │   ├── config.py            # Configuración con Pydantic Settings
+│   │   ├── enums.py             # Enums (Environments, LogLevels, IndexMetric)
+│   │   ├── models.py            # Modelos de datos (Medicamento, Inventario, etc.)
+│   │   └── exceptions.py        # Excepciones personalizadas
 │   │
-│   ├── rag/                    # RAG (lectura de documentos externos)
+│   ├── rag/                     # Sistema de RAG (documentos externos)
 │   │   ├── __init__.py
-│   │   ├── indexer.py          # Indexa documentos en Pinecone
-│   │   ├── retriever.py        # Recuperación de contexto
-│   │   ├── embeddings.py       # Configuración de embeddings
-│   │   └── prompts.py          # Templates de prompts RAG
+│   │   ├── embeddings.py        # Configuración de embeddings (Ollama)
+│   │   ├── indexer.py           # Indexación de documentos en Pinecone
+│   │   ├── retriever.py         # Recuperación de contexto
+│   │   └── prompts.py           # Templates de prompts RAG
 │   │
-│   ├── inventory/              # Conector a Google Sheets
+│   ├── inventory/               # Conector a Google Sheets (inventario)
 │   │   ├── __init__.py
-│   │   ├── client.py           # Conexión a Google Sheets API
-│   │   ├── schema.py           # Mapeo de columnas a modelos Pydantic
-│   │   ├── cache.py            # Cache de inventario en Redis (evita saturar API)
-│   │   └── updates.py          # (Opcional) Webhooks para actualizaciones
+│   │   ├── client.py            # Conexión a Google Sheets API
+│   │   ├── schema.py            # Mapeo de columnas a modelos Pydantic
+│   │   ├── cache.py             # Cache en Redis para evitar saturar la API
+│   │   └── updates.py           # (Opcional) Webhooks para actualizaciones
 │   │
-│   ├── memory/                 # Memoria persistente (ya tienes)
+│   ├── memory/                  # Memoria conversacional (persistente)
 │   │   ├── __init__.py
-│   │   ├── base.py
-│   │   ├── buffer.py
-│   │   └── persistent.py
+│   │   ├── base.py              # Interfaz abstracta BaseMemory
+│   │   ├── buffer.py            # Memoria en RAM (BufferMemory)
+│   │   └── persistent.py        # Memoria persistente con Redis (PersistentMemory)
 │   │
-│   ├── tools/                  # Herramientas para el agente (LangChain Tools)
+│   ├── tools/                   # Herramientas para el agente (LangChain Tools)
 │   │   ├── __init__.py
-│   │   ├── search_inventory.py # Tool: buscar en inventario por nombre/marca
-│   │   ├── search_docs.py      # Tool: buscar en RAG (libros/documentos)
-│   │   ├── suggest_upsell.py   # Tool: sugerir productos relacionados
-│   │   └── format_response.py  # Tool: formatear respuesta en Markdown/estructurado
+│   │   ├── search_inventory.py  # Buscar en inventario (nombre/marca)
+│   │   ├── search_docs.py       # Buscar en RAG (libros/documentos)
+│   │   ├── suggest_upsell.py    # Sugerir productos relacionados
+│   │   └── format_response.py   # Formatear respuesta (Markdown/estructurado)
 │   │
-│   ├── agent/                  # El orquestador (LangGraph/Agente)
+│   ├── agent/                   # Orquestador con LangGraph
 │   │   ├── __init__.py
-│   │   ├── graph.py            # Definición del grafo de LangGraph
-│   │   ├── nodes.py            # Nodos del grafo (tool calling, memory, etc.)
-│   │   ├── state.py            # Estado compartido del agente
-│   │   └── executor.py         # Loop principal (interacción con usuario)
+│   │   ├── graph.py             # Definición del grafo de LangGraph
+│   │   ├── nodes.py             # Nodos del grafo (tool calling, memory, etc.)
+│   │   ├── state.py             # Estado compartido del agente
+│   │   └── executor.py          # Loop principal (interacción con usuario)
 │   │
-│   └── entrypoints/            # Puntos de entrada al sistema
+│   └── entrypoints/             # Puntos de entrada al sistema
 │       ├── __init__.py
-│       ├── cli.py              # Línea de comandos (como tu agente actual)
-│       └── api.py              # (Futuro) API REST con FastAPI
+│       ├── cli.py               # Línea de comandos (agente interactivo)
+│       └── api.py               # (Futuro) API REST con FastAPI
 │
-├── tests/                      # Tests unitarios e integración
+├── tests/                       # Pruebas unitarias e integración
 │   ├── unit/
-│   │   ├── test_config.py
-│   │   ├── test_inventory.py
-│   │   └── test_memory.py
+│   │   ├── test_config.py       # Tests de configuración
+│   │   ├── test_memory.py
+│   │   └── ...
 │   └── integration/
 │       ├── test_rag.py
 │       └── test_agent.py
 │
-├── scripts/                    # Utilidades
-│   ├── setup_index.py          # Indexa documentos (se ejecuta una vez)
-│   ├── seed_inventory.py       # Carga inicial de inventario (mock o real)
-│   └── clean_redis.py          # Limpieza de sesiones en Redis
+├── scripts/                     # Utilidades administrativas
+│   ├── setup_index.py           # Indexa documentos en Pinecone (ejecución única)
+│   ├── seed_inventory.py        # Carga inicial de inventario (mock o real)
+│   └── clean_redis.py           # Limpieza de sesiones expiradas en Redis
 │
-└── docs/                       # Documentación del proyecto
+└── docs/                        # Documentación del proyecto
     ├── architecture.md
     ├── api_reference.md
     └── deployment.md
 ```
 
-### Descripción de Decisiones Claves
+---
 
-1. `src/core/` → Separación clara de configuraciones y modelos.
+## ⚙️ Configuración
 
-- `config.py` con Pydantic Settings (inmutable, validado).
-- `models.py` define Medicamento, Inventario, Consulta, Respuesta. Esto centraliza el esquema de datos, crítico cuando integras Google Sheets y RAG.
+1. **Clona el repositorio**
+   ```bash
+   git clone <url-del-repositorio>
+   cd pharma-agent
+   ```
 
-2. `src/inventory/` → Aislado del RAG.
+2. **Crea el archivo `.env`** (copia de `.env.example` o con los valores por defecto)
+   ```env
+   # Entorno y logs
+   AGENT_ENVIRONMENT=development
+   AGENT_LOG_LEVEL=INFO
+   AGENT_NAME=pharma-assistant
 
-- El inventario es una fuente de datos completamente distinta al libro de texto (que está en Pinecone). Requiere su propio cliente, cache (para no saturar Google Sheets), y esquema de validación.
-- El cache en Redis guarda el inventario completo con un TTL (ej. 5 minutos) para evitar consultas constantes a Google Sheets.
+   # Ollama / Modelos
+   IA_MODEL_HOST=http://localhost:11434
+   IA_MODEL_EMBEDDED_NAME=nomic-embed-text
+   IA_MODEL_AGENT_NAME=llama3.2
+   IA_MODEL_API_KEY=
+   IA_MODEL_TEMPERATURE=0.0
 
-3. `src/tools/` → El corazón del agente.
+   # Pinecone
+   PINECONE_HOST=http://localhost:5081
+   PINECONE_INDEX_NAME=lab
+   PINECONE_INDEX_DIMENSIONS=768
+   PINECONE_INDEX_METRIC=cosine
 
-- Cada herramienta es una función aislada que el agente puede invocar según la intención del usuario.
-- `search_inventory.py`: Busca por nombre comercial o componente activo (usando fuzzy matching o embeddings).
-- `search_docs.py`: Llama al RAG para preguntas sobre marcas, interacciones, etc.
-- `suggest_upsell.py`: Usa reglas de negocio (ej. "si pide ibuprofeno, sugerir paracetamol").
+   # Redis
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   REDIS_DB_INDEX=0
+   REDIS_TTL_SECONDS=   # vacío o None = sin expiración
+   ```
 
-4. `src/agent/` → Orquestación con LangGraph (no LangChain puro).
+3. **Levanta los servicios con Docker Compose**
+   ```bash
+   docker-compose up -d
+   ```
+   Esto inicia:
+   - **Ollama** (servidor de modelos LLM)
+   - **Pinecone** (índice vectorial para RAG)
+   - **Redis** (persistencia de memoria y caché)
+   - **Webdis** (API HTTP para Redis)
 
-- LangGraph es el estándar para agentes con estado y toma de decisiones. El agente decide en cada turno qué herramienta usar (inventario, RAG, o responder directamente).
-- `state.py` define el estado del agente: historial (de PersistentMemory), inventario cacheado, última herramienta usada.
-- `executor.py` implementa el bucle que mencionaste: while True: pregunta → procesar → responder.
+4. **Verifica que todos los contenedores estén saludables**
+   ```bash
+   docker-compose ps
+   ```
 
-5. `src/entrypoints/` → Puertas de entrada desacopladas.
+5. **Instala las dependencias de Python** (usando `uv` o `pip`)
+   ```bash
+   uv sync
+   # o
+   pip install -e .
+   ```
 
-- `cli.py` es tu agente actual, pero ahora importa agent/executor.py. Si en el futuro añades una API, solo creas api.py sin tocar la lógica.
+---
 
-6. `scripts/` → Operaciones administrativas.
+## 🧪 Uso básico
 
-- `setup_index.py`: indexa documentos en Pinecone (ejecución única).
-- `seed_inventory.py`: carga datos de prueba (o reales desde Google Sheets).
-- `clean_redis.py`: utilidad para borrar sesiones expiradas.
+### Indexar documentos (libro) en Pinecone
+```bash
+uv run python -m scripts.setup_index
+```
 
-7. `tests/` → Pruebas unitarias e integración.
+### Ejecutar el agente en modo CLI
+```bash
+uv run python -m src.entrypoints.cli
+```
 
-- En producción, cada módulo debe tener tests. Esto asegura que el agente no falle al cambiar el esquema de Google Sheets o el modelo de embeddings.
+### Ejecutar pruebas unitarias
+```bash
+uv run python -m pytest tests/unit/ -v
+```
+
+---
+
+## 📦 Dependencias principales
+
+- `pydantic-settings` – Configuración tipada y validación.
+- `langchain`, `langchain-community`, `langgraph` – Orquestación de cadenas y agentes.
+- `langchain-pinecone` – Integración con Pinecone.
+- `langchain-ollama` – Integración con Ollama.
+- `redis` – Cliente Redis para persistencia.
+- `pinecone-client` – Cliente para Pinecone (local).
+- `google-api-python-client` – Conexión a Google Sheets (futuro).
+- `pytest` – Tests unitarios e integración.
+
+---
+
+## 🧠 Arquitectura resumida
+
+1. **Configuración** (`src/core/config.py`) – Carga variables de entorno y expone `settings`.
+2. **RAG** (`src/rag/`) – Indexa documentos en Pinecone y recupera fragmentos relevantes.
+3. **Memoria** (`src/memory/`) – Almacena historial conversacional (en RAM o persistente en Redis).
+4. **Inventario** (`src/inventory/`) – Conector a Google Sheets con caché en Redis.
+5. **Herramientas** (`src/tools/`) – Funciones que el agente puede invocar (buscar inventario, RAG, upsell).
+6. **Agente** (`src/agent/`) – Orquestador con LangGraph que decide qué herramienta usar en cada turno.
+7. **Puntos de entrada** (`src/entrypoints/`) – CLI y (futura) API REST.
+
+---
+
+## 🔄 Próximos pasos
+
+- [ ] Desarrollar el conector a Google Sheets (`inventory/client.py`).
+- [ ] Implementar las herramientas (`tools/search_inventory.py`, `tools/search_docs.py`).
+- [ ] Construir el grafo del agente con LangGraph (`agent/graph.py`).
+- [ ] Añadir tests de integración para el flujo completo.
+- [ ] Crear una interfaz web (FastAPI + Streamlit) para demostración.
+
+---
+
+## 📄 Licencia
+
+Este proyecto es un laboratorio educativo. Todos los derechos reservados.
+
+---
+
+**Hecho con ❤️ para aprender y construir un agente farmacéutico útil.**
