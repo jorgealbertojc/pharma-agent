@@ -97,7 +97,7 @@ class TestConfig:
             assert settings.REDIS_TTL_SECONDS == 3600
         finally:
             # Limpiar archivo temporal
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
     def test_invalid_environment_raises_error(self):
         """3.1. AGENT_ENVIRONMENT inválido -> ValidationError."""
@@ -107,7 +107,7 @@ class TestConfig:
                 Settings.from_env_file(env_file)
             assert "AGENT_ENVIRONMENT" in str(exc_info.value)
         finally:
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
     def test_invalid_log_level_raises_error(self):
         """3.2. AGENT_LOG_LEVEL inválido -> ValidationError."""
@@ -117,7 +117,7 @@ class TestConfig:
                 Settings.from_env_file(env_file)
             assert "AGENT_LOG_LEVEL" in str(exc_info.value)
         finally:
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
     def test_invalid_index_metric_raises_error(self):
         """3.3. PINECONE_INDEX_METRIC inválido -> ValidationError."""
@@ -127,7 +127,7 @@ class TestConfig:
                 Settings.from_env_file(env_file)
             assert "PINECONE_INDEX_METRIC" in str(exc_info.value)
         finally:
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
     def test_invalid_temperature_raises_error(self):
         """3.4. IA_MODEL_TEMPERATURE inválido (no numérico) -> ValidationError."""
@@ -137,7 +137,7 @@ class TestConfig:
                 Settings.from_env_file(env_file)
             assert "IA_MODEL_TEMPERATURE" in str(exc_info.value)
         finally:
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
     def test_temperature_out_of_range(self):
         """Opcional: temperatura fuera de rango (sin validación de rango)."""
@@ -146,7 +146,7 @@ class TestConfig:
             settings = Settings.from_env_file(env_file)
             assert settings.IA_MODEL_TEMPERATURE == 2.5
         finally:
-            env_file.unlink(missing_ok=True)
+            env_file.unlink(missing_ok = True)
 
 def create_empty_env_file() -> Path:
     """Crea un archivo .env vacío en /tmp con nombre basado en timestamp."""
