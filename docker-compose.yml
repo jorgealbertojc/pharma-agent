@@ -1,0 +1,103 @@
+services:
+  # ============================================================
+  # 1. Ollama (servidor de modelos)
+  # ============================================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: lab-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_KEEP_ALIVE=5m
+    healthcheck:
+      test: [ "CMD", "ollama", "list" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: 16gb
+    networks:
+      - pharma-net
+
+  # ============================================================
+  # 2. Pinecone (índice vectorial - solo 1)
+  # ============================================================
+  pinecone:
+    image: ghcr.io/pinecone-io/pinecone-index:latest
+    container_name: lab-pinecone
+    platform: linux/amd64
+    restart: unless-stopped
+    environment:
+      PORT: 5081
+      INDEX_TYPE: serverless
+      VECTOR_TYPE: dense
+      DIMENSION: 768
+      METRIC: cosine
+    ports:
+      - "5081:5081"
+    networks:
+      - pharma-net
+
+  # ============================================================
+  # 3. Redis (persistencia y caché)
+  # ============================================================
+  redis:
+    image: redis:7-alpine
+    container_name: lab-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --appendfsync everysec --save 3600 1
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - pharma-net
+
+  # ============================================================
+  # 4. Webdis (API HTTP para Redis)
+  # ============================================================
+  webdis:
+    image: nicolas/webdis:latest
+    container_name: lab-webdis
+    restart: unless-stopped
+    ports:
+      - "7379:7379"
+    volumes:
+      - ./docker/webdis.json:/etc/webdis.prod.json
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - pharma-net
+
+# ============================================================
+# Volúmenes persistentes
+# ============================================================
+volumes:
+  ollama_data:
+    driver: local
+  redis_data:
+    driver: local
+
+# ============================================================
+# Red interna para comunicación entre servicios
+# ============================================================
+networks:
+  pharma-net:
+    driver: bridge
