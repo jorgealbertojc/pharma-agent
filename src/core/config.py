@@ -45,6 +45,12 @@ class Settings(BaseSettings):
     REDIS_DB_INDEX: int = 0
     REDIS_TTL_SECONDS: int | None = None    # None = sin expiración
 
+    # ------------------------------------------------------------
+    # Google Sheets (Inventario)
+    # ------------------------------------------------------------
+    GOOGLE_APPLICATION_CREDENTIALS: str = ""  # Ruta al archivo JSON de la cuenta de servicio
+    SPREADSHEET_ID: str = ""                  # ID del documento de Google Sheets
+
     @classmethod
     def from_env_file(cls, env_file: Path | None = None) -> "Settings":
         """
