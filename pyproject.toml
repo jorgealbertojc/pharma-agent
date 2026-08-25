@@ -5,6 +5,8 @@ description = "AI-powered pharmacy assistant"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "google-auth>=2.57.0",
+    "gspread>=6.2.1",
     "langchain-anthropic>=1.5.4",
     "langchain-community>=0.4.2",
     "langchain-core>=1.6.0",

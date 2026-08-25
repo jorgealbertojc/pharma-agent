@@ -64,6 +64,14 @@ class Medicamento(BaseModel):
         if v == "":
             return None
         return v
+    # Dentro de la clase Medicamento, agregar:
+
+    @field_validator('codigo', 'lote', mode='before')
+    def parse_to_str(cls, v):
+        """Convierte a string (para códigos y lotes que vengan como int)."""
+        if v is None:
+            return None
+        return str(v)
 
 
 class Inventario(BaseModel):
