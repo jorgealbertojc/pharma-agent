@@ -1,0 +1,1006 @@
+
+Libreta sobre
+
+
+
+
+
+
+
+
+
+
+
+Studienu e_anny
+
+
+
+Mis  datos
+Nombre:
+
+
+
+Curso:
+
+
+
+Carrera:
+
+
+Correo:
+
+Farmacología en enfermería
+
+Índice
+Generalidades	10
+.	10
+.	11
+Conceptos generales: administración segura de medicamentos	15
+Farmacocinética	19
+.	19
+.	20
+Absorción	23
+Distribución	27
+.	30
+Metabolización	33
+Excreción	36
+.	37
+.	38
+Farmacodinamia	39
+.	39
+.	39
+.	41
+.	43
+.	43
+.	44
+1
+
+Farmacología en enfermería
+Generalidades en administración de medicamentos	45
+Explicación de cada administración	48
+Administración por vía subcutánea	48
+Administración vía intramuscular	57
+Cálculo de dosis	64
+Preparación de medicamentos por vía parenteral	68
+Administración vía BOLO	77
+Administración de medicamentos vía oral	83
+Administración vía enteral por sonda nasogástrica/ sonda naso yeyunal	85
+Administración de medicamentos por vía tópica	85
+Administración por vía respiratoria	88
+Otras vías de administración	92
+Cálculo de dosis	94
+:	94
+.	94
+.	95
+.	95
+.	95
+.	96
+.	96
+.	97
+Abreviaturas	98
+
+
+
+2
+
+Farmacología en enfermería
+Fármacos:
+
+Acenocumarol	101
+Acetato de sodio 30%	103
+Aciclovir	106
+Ácido ascórbico (vitamina C)	109
+Ácido fólico	113
+ÁCIDO MAFENÁMICO	115
+ÁCIDO TRANEXÁMICO	116
+ÁCIDO VALPROICO	117
+ADENOSINA	119
+ADRENALINA/EPINEFRINA	122
+ALBENDAZOL	124
+ALOPURINOL	125
+.	127
+AMINOFILINA	130
+AMIODARONA	132
+AMITRIPTILINA	135
+AMLODIPINO	137
+AMOXICILINA	138
+AMPICILINA	140
+AMFOTERICINA B	142
+ATENOLOL	144
+ATORVASTATINA	145
+ATROPINA	147
+3
+
+Farmacología en enfermería
+AZATRIOPINA	149
+AZITROMICINA	151
+BETAMETASONA	152
+BICARBONATO DE SODIO	154
+BROMURO DE IPATROPIO	156
+BUDESONIDA	157
+CAPTOPRIL	159
+CARBAMAZEPINA	160
+CARBÓN ACTIVADO	161
+CARVEDILOL	162
+CEFAZDORLOIXNIALO	1654
+CEFOTAXIMA	166
+CEFTAZIDIMA	167
+CEFTRIAXONA	169
+CELECOXIB	171
+CIPROFLOXACINO	172
+CLINDAMICINA	174
+CLONIDINA	176
+CLONIXINATO DE LISINA	177
+CLOPIDROGEL	178
+CLORANFENICOL	180
+CLORFENAMINA	181
+CLORPROMAZINA	183
+.	185
+4
+
+Farmacología en enfermería
+CLORURO DE SODIO	187
+.	188
+CLOXACILINA	189
+CODEÍNA	190
+DEXAMETASONA	192
+DIAZEPAM	195
+.	197
+DIGOXINA	199
+DILTIAZEM	200
+DOBUTAMINA	202
+DOPMAPMERINIDAO.N....A	2075
+DOXICILINA	209
+ENALAPRIL	212
+ENOXAHEPARINA	213
+ERITROMICINA	215
+ESPIRONOLACTONA	217
+ESTREPTOMICINA	219
+ESTREPTOQUINASA	220
+ETAMBUTOL	222
+ETOMIDATO	223
+FENILEFRINA	224
+FENITOÍNA	226
+FENOBARBITAL	228
+FENTANILO	230
+5
+
+Farmacología en enfermería
+FLUCLOXACILINA	232
+FLUCONAZOL	234
+FLUMAZENIL	236
+FLUOXETINA	238
+FUROSEMIDA	240
+GABAPENTINA	242
+GENTAMICINA	244
+GLIBENCLAMIDA	246
+GLUCAGÓN	248
+GLUCONATO DE CALCIO	249
+
+GHLAULCOOPESRAID...O....L.......................................................................................................................................................................................................................................................................................................................
+
+2531
+
+HEPARINA	255
+HIDRALAZINA	256
+HIDROCORTISONA	258
+IBUPROFENO	261
+IMIPENEM	263
+INDOMETACINA	265
+INSULINA CRISTALINA	267
+INSULINA NPH	268
+ISONIACIDA	269
+ISOPROTENEROL	271
+ITRICONAZOL	273
+KETOPROFENO	275
+KETOROLACO	277
+6
+
+Farmacología en enfermería
+LACTULOSA	279
+LANATOCIDO C	280
+LEVODOPA + BENSERAZIDA	282
+LEVOFLOXACINO	283
+LEVOSIMENDÁN	284
+LEVOTIROXINA	286
+LIDOCAÍNA	288
+LORATADINA	291
+LORAZEPAM	292
+MANITOL	294
+MERCOAPPETNOEPMU.R...I...N.N...A	2976
+METADONA	299
+METAMIZOL	301
+METFORMINA	303
+METOCLOPRAMIDA	305
+METOTREXATO	307
+METRONIDAZOL	310
+MIDAZOLAM	312
+MILRINONA	314
+MONTELUKAST	316
+MORFINA	318
+N-ACETILCISTEÍNA	320
+NALOXONA	322
+NEOMICINA	323
+7
+
+Farmacología en enfermería
+NIFEDIPINO	324
+NISTATINA	325
+NITROFURANTOINA	326
+NITROGLICERINA	327
+NITROPRUSIATO	329
+NORADRENALINA / NOREPINEFRINA	331
+OLSELTAMIVIR	333
+OMEPRAZOL	335
+ONDASENTRON	336
+OXÍGENO	337
+PARAGCEVETEARMINOAL	3389
+PENICILINA BENZATINA	340
+PERMETRINA	342
+PETIDINA / MIPERIDINA	343
+PIRAZINAMIDA	345
+PREDNISONA	347
+PROPANOLOL	350
+PROPILTIURACILO	352
+PROPOFOL	353
+QUETIAPINA	355
+RANITIDINA	357
+RIFAMPICINA	359
+SALBUTAMOL	360
+SALMETEROL	361
+8
+
+Farmacología en enfermería
+SERTRALINA	362
+SUCCINILCOLINA	364
+SUERO GLUCOSADO	366
+SULFADIAZINA DE PLATA	367
+SULFATO DE MAGNESIO	368
+TACROLIMUS	369
+TIAMINA (Vitamina B1)	371
+TIELTIPERAZINA	373
+TRAMADOL	374
+VANCOMICINA	376
+VAEARSAOPARMESIILNOA	38708
+VINBLASTINA	382
+VINCRISTINA	384
+VITAMINA K, KONAKION O FITOMENADIONA	386
+VORICONAZOL	387
+WARFARINA	389
+DVA	391
+Sedación y bloqueo neuromuscular	394
+
+
+
+
+
+
+
+
+9
+
+Farmacología en enfermería
+Generalidades
+Se considera como	a toda sustancia química que interactúa con un organismo vivo, el cual provoca un determinado efecto que puede ser reconocido o medido, aunque sin hacer diferencias si éste es beneficioso o negativo para la salud.
+Diferente es un	, el cual es un fármaco o la asociación de ellos, destinada a la prevención, diagnóstico, tratamiento, alivio o curación de síntomas o signos de enfermedades, así como la modificación de estados fisiológicos, es decir, es el fármaco con utilidad medicinal.
+La  es la cantidad de fármaco que es introducida a un organismo, siendo aplicable a sustancias químicas y físicas.
+
+Relativa	Absoluta
+
+
+ Peso (mg) Volumen (ml)
+   
+Peso corporal (mg/kg) Superficie corporal (mg/m2)
+
+Concentración plasmática del fármaco
+
+
+
+
+a ic t
+á	[C]
+la p
+n ió c
+a
+
+[C]	mín.
+
+
+
+Intensida d del
+efecto
+
+r t n
+e c n o C
+Duración del efecto
+
+[C]	mín.
+
+
+
+T
+latencia
+
+
+
+10
+
+Farmacología en enfermería
+La	de los medicamentos suele ser confusa, pero se debe recalcar las diferencias entre ellos, por ejemplo:
+
+
+
+FÓRMULA QUÍMICA	Ácido (RS)-2-(4-isobutilfenil)propanoico
+NOMBRE SEGÚN DCI	Ibuprofeno
+
+NOMBRE	SEGÚN PATENTE
+
+Niofen(r),	Actron(r),
+Ipson(r), Dolgex(r)...
+
+
+
+
+Bioequivalencia
+En Chile se considera	a un medicamento que comprueba contener
+el mismo principio activo, en igual cantidad y con parámetros similares de absorción (Cantidad y velocidad) al ser comparado con un producto de Referencia, bajo parámetros bien establecidos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11
+
+Farmacología en enfermería
+
+
+Forma externa o forma de acondicionamiento de un fármaco que permite su administración por una vía que resulte eficaz para conseguir el efecto deseado. Según la forma farmacéutica podemos saber la vía de administración.
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+Farmacología en enfermería
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Formas en las que se puden administrar:
+• Cartuchos
+• Dispositivo
+• Jeringa
+• Parche
+• Nebulizador
+
+
+
+13
+
+Farmacología en enfermería
+
+
+
+
+
+
+Vía tópica
+• Vía cutánea
+• Mucosa ocular
+  • Vía ótica Vía enteral
+• Vía oral
+• Vía sublingual
+  • Vía rectal Vía respiratoria:
+• Inhalación
+• Instilación
+• 
+Vía	endotraqueal	(ya	no recomendado actualmente)
+Vía parenteral:
+
+• Vía instravenosa
+• Vía subcutánea
+• Vía intramuscular
+• Vía intradérmica
+• Vía intrarraquídea
+• Vía intraarterial
+• Vía intraarticular
+
+
+
+Farmacología en enfermería
+Conceptos generales: administración segura de medicamentos
+Error de medicación: cualquier evento prevenible que puede causar o llevar a un uso inapropiado de la medicación o a daño en el paciente mientras esta medicación
+está a cargo o en control de profesionales de salud, el paciente o un consumidor.
+Evento adverso con medicación: daño que resulta del uso de la medicación, aunque la
+causalidad no está necesariamente probada porque no hay evidencia suficiente.
+
+
+
+
+
+Prescripción: indicación médica por profesionales facultados, como el médico o la matrona.
+Transcripción: copia de la indicación médica a otra documentación; por ejemplo: por teléfono con el médico, a través de las tarjetas (paciente, indicación y horario), etc.
+Preparación: se prepara el medicamento, considerando las características del
+
+paciente, del fármaco, y los requerimientos para poder administrarlo (por ej. Cuando el medicamento debe estar en lugares donde no llegue luz). Esta etapa es
+clave para tener un buen proceso en la administración de medicamentos.
+Dispensación: se envía la receta a farmacia y esta entrega los medicamentos a los distintos servicios.
+Monitorización: sobre efecto deseado, reacciones adversas y efectos colaterales, los cuales muchas veces tienen que ver con interacciones con otros fármacos.
+
+Farmacología en enfermería
+
+
+Mejoría de comunicación Monitorización de errores continua
+Asistencia en toma de decisiones (por parte de químicos
+fHaerrmraamcéieuntticaossi)nformáticas Estandarización de etiquetado
+Aplicación de los 6 correctos ?	paciente, medicamento,
+dosis, vía, horario y registro
+:
+Es la tendencia de una molécula a asociarse con otra; capacidad
+
+
+
+del fármacEos
+
+dlea uhnairbsielidaasdu
+
+reclaeptitvoar; dpeueduen sceor mallptlae,jomefdáiram, abcaoja-r. eceptor  de
+
+producir una respuesta funcional máxima.
+       Es la expresión de la actividad de la droga: concentración necesaria para producir un efecto definido.
+        : mayor afinidad por un tipo o subtipo de receptor; actúa preferentemente en un tipo de receptor (Mientras mayor sea la dosis, será menos selectivo).
+
+
+presentanefuenctoefqeucetoocmuarryeoralqaudemsini issterarsudmoasrafáreml aecfoesctjuontdoes,  administrarse de manera separada (se potencian).
+
+aenmbeol squael
+
+                : disminución de la respuesta a una misma dosis con administración repetida o continua. Puede ocurrir con drogas de abuso, fentanilo, salbutamol.
+              : rango en el cual un fármaco produce un efecto terapéutico minimizando los efectos tóxicos. (Rango donde es efectivo y
+seguro).
+
+Farmacología en enfermería
+              : comparación entre la cantidad de fármaco que causa la muerte (en animales) o toxicidad (en humanos) con la que se necesita para producir el efecto deseado. (Compara la dosis tóxica con la dosis terapéutica).
+
+
+Ley 20.724: modifica el código sanitario en materia de regulación general de farmacias y medicamentos, cómo ingresan al país, cómo se almacenan.
+Ley 20.584: ley de derechos y deberes de los pacientes
+Ley 20.000: sanciona el tráfico ilícito de estupefacientes y sustancias psicotrópicas. En Esta ley entra lo clínico y lo no clínico (uso de marihuana, éxtasis, etc.). Es sustentada por el Decreto 404 y Decreto 405.
+Decreto 404: estupefacientes.
+Decreto 405: psicotrópicos.
+Artículo 95: Se entenderá por producto farmacéutico o medicamento cualquier sustancia natural, biológica, sintética o las mezclas de ellas, que se destine con fines de prevención, diagnóstico, atenuación, tratamiento o curación de las enfermedades o sus síntomas o de regulación de sus sistemas o estados fisiológicos particulares.
+Artículo 96: El Instituto de Salud Pública de Chile es la autoridad encargada del control sanitario de los productos farmacéuticos, cosméticos, de uso animal, vegetal y los insumos médicos.
+Artículo 97: El ISP lleva un registro de todos los productos farmacéuticos evaluados favorablemente en cuanto a su eficacia, seguridad y calidad.
+Artículo 101: recetas
+
+Farmacología en enfermería
+
+
+Receta médica simple: orden suscrita por un profesional habilitado, con el fin de que una cantidad de medicamento sea dispensada.
+
+Receta magistral: para productos farmacéuticos diseñados por el prescriptor de manera  personalizada  atendiendo  requerimientos  farmacológicos  específicos
+(preparado magistral).
+Receta médica retenida: se prescriben productos sujetos a control de venta y debe archivarse en el establecimiento.
+Receta cheque: formulario oficial para la prescripción de productos estupefacientes y psicotrópicos.
+
+Farmacología en enfermería
+Farmacocinética
+Estudia las respuestas del organismo a los diferentes fármacos desde ue estos son administrados y hasta su eliminación por diferentes vías.
+Para que el fármaco consiga su	necesita llegar a ciertos niveles esn melínóirmgoansoe epnroedluccueaul nsea procesará, yviesndmoáqxiumeoehstaeysuenaael adecuado dado que si
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fases de la farmacocinética
+
+
+
+   iberación Absorción Distribución
+etabo ismo
+
+xcreción
+
+Estos procesos no ocurren de forma
+
+escalonada, sino que conforme al fármaco va
+siendo liberado y se producen diversas concentraciones plasmáticas, pero todas van al mismo tiempo
+
+Farmacología en enfermería
+
+
+Proceso de separación del fármaco y los excipientes que componen una formulación, para que el principio activo sea absorbido por el organismo. Puede comprender hasta 3 etapas, dependiendo de su composición:
+
+
+
+Desintegración	Disgregación	Disolución
+Convencional Modificada
+
+
+Para que estos fármacos puedan liberarse, se ven expuestos al paso de diferentes
+                lo cual dependerá de si es que pasa o no las características fisicoquímicas del fármaco y la estructura de la barrera con la cual va interactuar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Factores	que	afectan	la transferencia de un paso al otro:
+? Peso molecular
+? Características estructurales
+?
+? GSorlaudboilidaedioenizlaípcidióons
+? Unión a	roteínas del	lasma
+
+Farmacología en enfermería
+La forma más fácil de cruzar a todos los órganos y partes del cuerpo es la
+, la cual tiene distintos transportes:
+
+
+
+
+
+
+
+
+
+
+
+Pasivo	Facilitada
+
+
+
+
+Activa
+
+UNIPORTE
+
+Farmacología en enfermería
+
+
+
+
+
+
+ANTIPORTE
+
+
+
+
+SIMPORTE
+
+
+
+
+
+
+Los	suelen limitar de acuerdo al flujo sanguíneo por sobre otros fsaucbtcourteásn, ecaosmeoi,ntproarmeujsecmulpalro., la filtración glomerular y la absorción por vías
+
+
+
+
+
+
+
+
+
+
+
+
+
+Otros buenos mecanismos de transporten son las	(permiten endocitosis y exocitosis),	estructuras formadas por fosfolípidos y que
+en su interior alojan moléculas que pueden ser captadas por ciertas células que las reconocen) e	(pequeñas moléculas hidrofóbicas, que al disolver su membrana lipídica alteran la permeabilidad de la membrana a diferentes iones).
+La liberación es el	, algo muy
+importante desde el punto de vista farmacotecnio, dado que está afectado el sitio edreaaubnsordceiólnos(mgirsamnodseistipordoebleibmearsacainótne)sydteamlabbiéionepqourivaslpenctioa.farmacotecnio.  Este
+
+Farmacología en enfermería
+El	es muy importante dado que dará a conocer bajo qué condiciones se liberará el fármaco; todo esto es determinado por la fórmula de la cápsula.
+Su objetivo final es la disolución del fármaco, es decir, que nuestro principio activo se encuentre totalmente desprendido de los excipientes. Hay varios fármacos que
+venadnea, nseogsueirllevstaeaprcoacbeosoe,lcpormocoe, spo rdejdemisopluoc: ijóanraoblei,b,bderadcoióqnu;elavsiesnuespdeinsusieolntoe,spyoar vienen degradadas, pero se deber re agitar dado que tienden a ir precipitando su contenido sólido.
+La ventaja de la liberación es que hoy en día no solamente tenemos que generar una liberación convencional basada en las características del organismo, sino que se aprovechan estas mismas características y así formular liberación modificada (ejemplo: las formulaciones de liberación prolongada). Muchas veces los
+excipientes ayudan a frenar la acción de un fármaco o aquellos que tienen vidas biológicas más cortas (así no se administra a cada rato).
+El	cuando fármaco será capaz de
+             , principalmente membranas que van a concluir que el fármaco alcance la liberación sistémica y también bajo esa misma línea podemos considerar el proceso de absorción. Se comienza a considerar una serie de procesos de
+, donde el principal es la difusión pasiva, porque es un
+pmrolceecsuolarc,alsipi oilsiomluitbaldeso, nmo ensotsar ecsatrginagdiod,ou, npiresreoptoiceonea claiesrptarostleiímímniatsacpiloansemsát(piceaso; mientras que los mecanismos de difusión facilitada, simple, nos permite compensar estos fenómenos (más cantidad y más carga).
+
+Es cuando el fármaco pas a través de una o más	hasta llegar a la circulación sistémica, pero es dependiente de:
+?
+?Características  fdiesilcporqeupíamriacdaos  dfaerlmfáarcméautcioco
+
+Farmacología en enfermería
+?Características del sitio de absorción
+?Mecanismos de eliminación presistémica
+La	es para expresar qué fracción de una determinada dosis de fármaco alcanza el sitio de acción o un fluido biológico (sangre) con acceso a éste,
+pero puede va.riar según su	,	y
+Eliminación presistémica:
+Mecanismos que alteran la entrada del fármaco a la circulación sistémica y limita su magnitud (efecto primer paso hepático, actividad gastrointestinal, metabolismo intestinal)
+
+
+
+Primer paso hepático: fármacos por vía oral pasan primero por el hígado y este suele inhibir gran parte de su mecanismo dado que lo absorbe.
+
+
+
+
+Vía de administración
+Ruta por la cual el medicamento se pondrá en contacto con el organismo para interactuar con él y su selección depende de: condición y características individuales del paciente, características del medicamento y disponibilidad de formas farmacéuticas.
+
+Farmacología en enfermería
+
+
+
+
+Indirectas
+- Oral
+- Sublingual
+- 
+- INnahsalatoria
+- Ótica
+- Ocular
+- Vaginal
+- Dérmica
+- Rectal
+
+Directas
+- Intravenosa
+- Intramuscular
+- ISnutbrcaudtéárnmeiaca
+- Epidural
+- Intratecal
+- Intraarticular
+- Intraarterial
+- Peritoneal
+
+
+Hay veces que los fármacos no podrán hacer efecto, esto dado a que el organismo
+anolteersatádop, reppoar raesdoo peastrea reesctuibdiirolo,(f(armacocinética) pyesrumsititeiotdeenearbsuonrcpióantreósntadráe referencia de un medicamento.
+pH (ionizado y no ionizado)
+Sangre	7.4
+Orina	4.5 - 8.0
+Intestinal	6.0 - 8.0
+Gástrico	1.5
+Algunas moléculas reaccionan dependiendo del nivel de pH (ácido - base).
+No ionizado = se absorbe mejor porque está dentro de los niveles del pH
+Ionizado = cuesta la absorción porque está sobre los niveles de pH deseado
+
+Farmacología en enfermería
+Se pueden tener fármacos como la	, la cual tiene un		, esto significa que		y pasará	, pero
+Por eso, si lo administramos por vía oral, a nivel del
+estómago, estaría	por eso pasaría más rápido dado que sería por difusión pasiva; a nivel intestinal (6-8) estaría ionizado y sería más difícil su
+absorción.
+No solo depende del pH, sino de las condiciones del sitio de absorción, por eso hay veces que pequeñas dosis de fármacos no ionizadas se pueden aprovechar mejor a nivel intestinal dado que la superficie intestinal absorbe mejor, en cambio el estómago no está hecho para absorber en grandes cantidades.
+Otro ejemplo es la	a nivel intestinal o por la acidez del estómago, se encuentra casi un		, pero el intestino es todo
+lo contrario, está 97& ionizado y un 3% no ionizado, pero el resultado global es que ese 3% se aprovecha para dar el efecto clínico y todo lo que queda dando vuelta
+genera los efectos adversos (antiinflamatorio). El pH es un factor, pero no uno absoluto, sino que el organismo que facilita la absorción también influye, al igual que el transporte.
+Siguiendo con el ejemplo de la Warfarina (5.0) posiblemente en la sangre (7.4) se encuentra ionizada, lo cual quiere decir que su facilidad para poder salir de la
+isnasntgarnecsiaerpáomrqeuneoradcatúdao cqoumeotiaeneticaoaar gaul(aionnteiz,  adsoí )s.iErvsteaqpureopeisetdéadaensdúotivluenltcaiesretna la sangre.
+Para que un fármaco atraviese despende del pH que tenga la barrera. El pH te indica si están las condiciones óptimas para atravesar, pero la barrera determina todo (aunque esté ionizada aún puede atravesar, pero necesitará alguna proteína o canal para ayudarse).
+
+EaldvpeHrseoserl esaulemñeon).teCuraenledvoaneltefácrumancdooysaehhaasbidlao  daebslorsbiadnotiyhisetaemnícnuiceonstra(efenctlao
+
+Farmacología en enfermería
+sangre, la clorfenamina se encuentra en un estado no ionizado, mientras que
+(loratadina, leusotinizina, etc.) se encuentran en
+estado	.
+Para llegar al    hay más limitaciones que cualquier otro tejido por las
+herméticamente pyara el SNC, por eso la m, paeyroorílaade los fármacos pasa por difaucstiúóan pasiva (muy pocos pasan), las especies liposolubles y	; la clorfenamina se encuentra no ionizada, por lo que puede pasar por difusión pasiva, alcanza el SNC, antagoniza receptores de histamina y eso genera el sueño.
+
+
+
+
+
+
+
+
+
+Liposolubles	Hidrosoluble	Difusión
+facilitada
+
+Transporte activo
+
+Pinocitosis
+
+Pasa directo	Por poros	Proteína	Necesita	ATP
+obtenido	de hidrólisis; saturables		y competitivos
+
+Transporte a través de vesículas
+
+
+
+
+
+sParoncgeusíonepaorhaesl tcaualcealnfzáarmuancoesteadmo vdielizeaqudielibdriifoerdeintáems ifcor.mas por la circulación
+Un	es cuando las concentraciones van a estar cambiando constantemente: el fármaco atraviesa a un determinado tejido, favorece la eliminación del fármaco, se asocia a determinados sitios de acción y cuando se asocia a un sitio de acción, va generar unos niveles reversibles para el receptor farmacológico, fármaco que se desprende del sector farmacológico y puede ser devuelto a la circulación sistémica, ir al hígado para ser eliminado o llegar a otro
+sector del organismo, y así sucesivamente. A esto se refiere a un equilibrio
+
+Farmacología en enfermería
+dinámico, las concentraciones irán cambiando, pero se a la vez se irán equilibrando.
+Recordar que el fármaco a veces puede pasar intacto hasta la circulación, pero ahí hay que ver como el equilibrio actúa dado que esta dosis puede distribuirse a
+tvearraiapséuptaicrtoe. sDdepelencduerdpeol asitlaiovpeazr, alovsecrueallesfepcutoe..den dar un efecto adverso o uno
+¿Para qué sirve la distribución en las ciencias de la salud?
+Para saber cómo se acumulan ciertos medicamentos en distintos tejidos ya sea para generar un efecto terapéutico y un efecto tóxico.	: La GENTAMISINA es un antibiótico altamente utilizado a nivel hospitalario, pero no tanto en ambulatorio. Es un antibiótico que pertenece a la familia de los aminoglucósidos, y tanto la gentamicina como otros aminoglucósidos tienden a la selectividad muy alta, por tejidos que componen el aparato auditivo y los riñones; esto quiere decir que aquí podemos encontrar concentraciones muy altas en comparación con las concentraciones plasmáticas o en otros tejidos que pueden ser de interés farmacoterapéutico.
+Por el hecho de que los principales efectos adversos que uno observa por la administración de antibióticos de la familia de los aminoglucósidos es toxicidad a nivel renal y alteraciones de cambios auditivos. Cuando van a estos lados no están
+causando una acción terapéutica, pero si están causando ciertos daños (efectos adversos en dosis habituales). También nos permite saber cómo el fármaco va a
+perfundir a tejidos que son de alto interés, por ejemplo, aquellos que actúan al nivel de SNC (recordar que la barrera hematoencefálica limita la perfusión de fármacos, solo atraviesan por difusión simple los fármacos no ionizados, altamente liposolubles y algunos por mecanismo de transporte activo (proteínas que engañan al fármaco creyendo que entraron, pero luego los echa))
+Hay que saber cómo atraviesan para ver cómo reaccionan en el organismo, en especial en el SNC, como la LEVODOPA, la cual se utiliza en el tratamiento del
+
+Farmacología en enfermería
+Parkinson. Esta enfermedad se produce por un déficit en la producción de dopamina (alteraciones en las neuronas). Para poder abordar esta enfermedad sería normalizar los niveles de dopamina, y esto se hace administrando un precursor de dopamina. NO SE ADMINISTRA DOPAMINA DIRECTAMENTE dado que no solamente habría una gran variedad de efectos periféricos (cardiovascular), sino que la dopamina no puede atravesar la barrera hematoencefálica; en cambio la LEVODOPA, que es un precursor de la dopamina, puede ingresar al SNC sin problema y convertirse en dopamina en el SN, así es considerado un tratamiento de primera línea.
+En el embarazo también existe una		la cual cumple un rol parecido a la	pero mucho menos marcado. Así se protege al feto. Hay ciertos fármacos que pueden ser administrados en el embarazo
+tyaensttoosenestaánnimdaivleidsidcoosmeon ecnatehguomraíanso:sl,ancoatheagnorídaeAmossotnraadqouetlelonserfáarmlgaúcnoseqrruoer, teratogénico (afectar desarrollo), la categoría B son aquellos que tienen una seguridad relativa, pero en animales solamente (el paracetamol suele ser categoría A y B); y la categoría C representa los fármacos nuevos, es decir que no hay estudios (no en animales ni humanos) para poder saber si es que hay algún peligro de teratogenicidad, por eso es bastante complejos el utilizarlos porque no se sabe nada de ellos (antiinflamatorios no esteroidales). Los fármacos de categoría E
+están contraindicados dado que los estudios que se hicieron con animales han salido alterados, y los de categoría X son aquellos que han presentado, tanto en
+humanos como en animales, errores de teratógena.
+
+Farmacología en enfermería
+
+
+Categoría A	No	hay	error terapéutico ni en humanos ni animales
+
+Categoría B	Seguridad	relativa solamente en animales
+Categoría C	Fármacos nuevos (ni animales ni estudios)
+Categoría E	Contraindicados al presentar alteraciones en animales
+Categoría  X	Presentan  errores  de
+teratógena	en humanos y animales
+
+La mayoría de todos los medicamentos pasa a la sangre, y aquí es donde se produce el 1er fenómeno de equilibrio ya que a este nivel hay una serie de proteínas que tienen a capacidad de vincular ciertos medicamentos y son uniones de carácter reversibles. En la sangre podemos tener fármacos en estado libre y fármacos unidos a proteínas (afinidad con la proteína y concentración fármaco- proteína).
+El fármaco libre es el único que puede perfundir a otros tejidos (de reserva, para ser eliminado, etc.) y estar activo.
+El fármaco unido a proteínas, dependiendo del grado proteico, va a ver una modulación de los inicios de los efectos farmacológicos, intensidad y duración de los efectos (vida media biológica). Actúa como una reserva dado que no puede ser eliminado ni perfundir a los tejidos. Es determinante en la intensidad del efecto, en su duración y en qué tan rápido aparezca (periodo de latencia).	: tenemos
+
+30
+
+
+
+Farmacología en enfermería
+100 mg de fármaco en la sangre, si el 99% de ese fármaco se uniese a proteínas, significa que tengo 1 mg de fármaco libre para perfundir a los tejidos. Si esa cantidad es insuficiente, ese fármaco libre se va a repartir por los diferentes tejidos por los cuales puede llegar a tener afinidad; ese mg va a desaparecer de la sangre y ese 99% se va a tener que equilibrar y liberar parte del fármaco (ley de acción de masa), por lo que siempre quedará un 99% encapsulado en proteínas y un 1% libre en la sangre.
+Así mismo, esta unión a proteína es relevante en los procesos de interacciones, porque normalmente el hecho de que existan agentes que puedan desplazar a los fármacos de su sitio de una unión a proteína, pueden ser sustancias químicas determinadas, alteraciones patológicas, etc., puede modular estas concentraciones de fármaco libre y unido. Afecta tanto a la intensidad y a la duración de los efectos
+farmacológicos (Re-administración o toxicidad)
+En la redistribución es importante la existencia de barreras, sistemas que pueden
+limitar el acceso de fármaco dado que nos dan a entender mejor como se maneja todo.
+¿Qué altera la distribución?
+                     que movilicen de su sitio de unión a las proteínas. Hay muchas proteínas que se pueden asociar a fármacos, entre las más comunes está
+al alfa-glicol-proteínas, las cuales se asocian a fármacos básicos; la albumina, la cual se asocia a fármacos ácidos.
+Un ejemplo de alteraciones farmacológicas en	. Cuando 2 fármacos que cumplen la misma función se pelean por un mismo sitio de unión, donde posiblemente el fármaco más concentrado o que presenta mayor afinidad va a ganar aquel sitio, lo cual va a hacer que ese fármaco que debió haber estado unido, se encuentre libre y gatilla a reacciones adversas (toxicidad, menor o mayor alteración de efectos).
+
+31
+
+
+
+Farmacología en enfermería
+También hay otras condiciones que puedan determinar la alteración de la distribución. Todo sigue asociado a las proteínas, pero esta vez son por consecuencias patológicas las que provocan la caída de estas proteínas, por ejemplo, la hipoalbuminemia, grandes quemaduras; esto provoca que haya menores sitios de asociación al fármaco.
+Categorías
+Dependiendo de cómo se habla del fármaco, se dividirá en categorías mono, bi o tricompartimental.
+El	, quiere decir que nuestro fármaco se distribuye de manera rápida homogénea por todo el organismo. No hay preferencia por ningún tejido y puede abandonar sin problemas el sistema circulatorio (anestésicos).
+
+El	es cuando el fármaco se equilibra con tejidos con alta irrigación para posteriormente acumularse en tejidos que se encueten menos
+irrigados, es más heterogéneo.
+El	viene siendo aquellos de elección selectiva (gentamicina), que el fármaco primero se une a tejidos altamente irrigados, posteriormente es capaz de equilibrarse en tejidos donde hay menor irrigación y por último alcanza un equilibrio por tejidos de los cuales tiene una selectividad específica (aquí alcanza concentraciones muchos más altas que las plasmáticas). Todo depende de las características del fármaco y las características del tejido.
+
+32
+
+
+
+Farmacología en enfermería
+Estos procesos de distribución también se vinculan mucho a la existencia de estos reservorios, que algunas veces no son tan reservorios. El	, , son de los tejidos donde los fármacos
+       o a veces solamente se acumulan por el fenómeno normal de la perfusión y formando un equilibrio propio del periodo de distribución.
+
+
+Almacenan parte de los fármacos, haciendo que así se produzcan los efectos adversos más adelante
+
+
+
+
+
+
+También existe un fenómeno llamado	, la cual se salta un poco la teoría asociada a los compartimentos e implica que, por su alta selectividad, un
+fármaco es capaz de acumularse rápidamente en un tejido para después recién liberarse al resto de los tejidos con los que tiene menos afinidad. Un ejemplo de esto es el tiopental, el cual es un fármaco que se utiliza en el proceso de anestesia. Lo que ocurre es que este se administra y genera un efecto muy rápido para la inducción de la anestesia. ¿Por qué no se puede utilizar para sostener la anestesia? Por el hecho de que presenta el fenómeno de la redistribución; se acumula en el
+SNC, pero pasado unos minutos el fármaco empieza a salir de ahí y se va a otros tejidos (adiposo, hígado, riñones, etc.). Por eso es que es considerado como el fenómeno tricompartimental, pero casi a la inversa.
+En la distribución analizamos dos procesos que son relevantes para la eliminación de un medicamento (limitar actividad de forma irreversible), el primero es la excreción y la me metabolización (biotransformación).
+
+
+En la	se cambia la estructura química del fármaco con el objetivo final de favorecer su eliminación (renal, biliar, etc.); se llama
+
+33
+
+
+
+Farmacología en enfermería
+biotransformación para no confundirlo con el metabolismo endógeno. La mayoría de los fármacos dependen mucho de su estructura química, dado que con un solo cambio de un grupo funcional puede hacer a un fármaco inútil, por ende, existen demasiadas enzimas a nivel intestinal y hepático para que puedan hacer este tipo de distribución (beneficioso o normal). Desde el punto de vista beneficioso: existen fármacos que se administran en forma de pro fármaco (sustancia que nuestro organismo inactivo, pero que, una vez de sufrir los procesos de biotransformación, empieza a tener una configuración donde presenta una actividad farmacológica), un ejemplo es el	el cual es un antihipertensivo (fármaco de primera línea en el proceso de la HTA) y su forma activa es el enalaprilat, el cual se obtiene por una modificación de su estructura. ¿Por qué no se administra el enalaprilat? Porque el enalaprilat tiene una vida media muy corta y es altamente atacado por efectos del primer paso hepático, en cambio al colocarlo como enalapril no sufre ninguno de estos efectos. Otro beneficio que se puede ver: la vida media biológica es distinta a la vida media de eliminación. Muchas veces podemos tener un fármaco que se elimina rápidamente, pero la degradación generada por la biotransformación puede generar metabolitos activos, que pueden extender la vida media biológica de ese fármaco; un ejemplo es un remedio utilizado como antiagregante plaquetario (trópico...) tiene una vida media corta (no más de 5 o 6 días), pero al ser biotransformado genera varios metabolitos activos que
+
+
+sioesmtiperne nes ubeancetfivcidoasad, acontmiopplaoqruejteamripalo. Leal paacrcaiócnetdaemlolol,s eml ectuabl ovlintocus ladctoivcosnneol
+daño hepático. Este puede sufrir varios procesos de biotransformación y genera algunas sustancias que potencian su actividad farmacológica, pero dentro de este metabolito prioritario que sufre puede dar lugar a un metabolito altamente reactivo llamado N-ACETIL-PARABENZOTINOININA (NAPQI), el cual genera un crecimiento del estrés oxidativo, daño a nivel de membrana y el tejido más afectado es el hígado (por eso no se debe consumir a grandes cantidades).
+
+Entonces, las capacidades de la biotransformación son la capacidad de activar o inactivar un fármaco.
+
+34
+
+
+
+Farmacología en enfermería
+La existencia de los metabolitos activos se considera bastante ya que puede potenciar los efectos terapéuticos o tóxicos de un fármaco, mientras que la inactivación es el proceso ideal que se logra.
+Hay dos tipos de desfases que genera el fenómeno de la	que se
+categoriza como:
+1. (reacciones que dan lugar a la activación del fármaco, como redox
+(metabolitos), hidrolisis, hidroxilación) que ayuda en la activación de una molécula y su objetivo es aumentar su polaridad (menor polaridad es más difícil absorberlos y excretarlo por vías renales), pero da la aparición de sustancias más activas.
+2. involucra la asociación de fármacos a moléculas con gran peso molecular, por ende, irreversiblemente dan lugar a que el fármaco sea excretado.
+
+No genera metabolitos activos, sino que solo elimina. (vías biliares).
+
+35
+
+
+
+Farmacología en enfermería
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citocromo P450
+Conjunto de enzimas que catalizarán reacciones en la Fase 1
+? Hidroxilación: (-OH) vuelve al sustrato más soluble en agua (se agrega este grupo)
+? Liposolubles: se reabsorberán, el hígado elimina por vía digestiva las heces
+
+Es donde se verá la disminución progresiva del fármaco activo en el organismo dado que no siempre se asocia con la salida del fármaco del cuerpo humano.
+Algunas vías de excreción de los fármacos son:
+• Vía renal: más común, fármaco más hidrosoluble, filtrado fácilmente. Tiene complejidades dado que no solo son fármacos filtrados, sino que pueden ser
+
+
+sveoclvrert adocisrcyullabrs).oErbl icdliorsen(dx,eepsencduaiendteo sed eleimneinrgía ael yfáqruemaceol f(áarcmlarcaompieunetdoe)
+
+36
+
+
+
+Farmacología en enfermería
+y representa el fármaco por unidad de tiempo que el órgano es capaz de eliminar. Cuando se obtiene niveles alto del clirenx (ejemplo creatinina) significa que no solo se está filtrando, sino que se está secretando; pero si es de nivel bajo significa que el fármaco se está reabsorbiendo. La diuresis forzada es cuando se modifica el fármaco para que quede en una forma ionizada y así no pueda ser reabsorbido.
+• Lactancia: No existe un medicamento tan relevante como para generar cambios en el recién nacido, pero si puede llegar a alterar el SNC dado que son más sensibles a las bases débiles.
+• Biliar: Es un 10% de eliminación. Son aquellos fármacos más duros, y da por resultado la eliminación junto a las heces. Se pueden observar fenómenos de reabsorción.
+
+• 
+• EPpeiltoe:liUanlejemplo son las drogas
+
+
+
+
+El	es la principal vía de expresión y realiza dicha función por medio de tres mecanismos:
+1. Filtración glomerular: hidrosolubles
+2. Secreción tubular
+3. Reabsorción tubular
+
+El	reabsorbe los fármacos liposolubles y a esto se le llamará "excreción biliar", y es todo lo metabolizado en el hígado que va a pasar por la bilis y se eliminará por las heces.
