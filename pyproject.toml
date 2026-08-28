@@ -5,6 +5,7 @@ description = "AI-powered pharmacy assistant"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.141.1",
     "google-auth>=2.57.0",
     "gspread>=6.2.1",
     "langchain-anthropic>=1.5.4",
@@ -21,6 +22,7 @@ dependencies = [
     "requests>=2.34.2",
     "rich>=15.0.0",
     "tiktoken>=0.13.0",
+    "uvicorn>=0.52.4",
 ]
 
 [tool.pytest.ini_options]
