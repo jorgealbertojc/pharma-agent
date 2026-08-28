@@ -8,7 +8,7 @@ y la representación en string de las excepciones.
 
 import pytest
 
-from src.core.exceptions import (
+from app.core.exceptions import (
     AppException,
     ConfigurationError,
     ServiceConnectionError,

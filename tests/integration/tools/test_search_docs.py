@@ -11,11 +11,11 @@ from pathlib import Path
 import pytest
 from pinecone import Pinecone
 
-from src.core.config import settings
-from src.rag.indexer import Indexer
-from src.rag.retriever import Retriever
-from src.rag.enums import SearchType
-from src.tools.search_docs import SearchDocs
+from app.core.config import settings
+from app.rag.indexer import Indexer
+from app.rag.retriever import Retriever
+from app.rag.enums import SearchType
+from app.tools.search_docs import SearchDocs
 
 
 @pytest.fixture(scope="function")

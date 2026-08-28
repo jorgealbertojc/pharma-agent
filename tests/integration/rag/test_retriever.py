@@ -10,8 +10,8 @@ import pytest
 from pathlib import Path
 from langchain_core.documents import Document
 
-from src.core.config import Settings
-from src.rag import Retriever, SearchType, Indexer
+from app.core.config import Settings
+from app.rag import Retriever, SearchType, Indexer
 
 
 # ------------------------------------------------------------

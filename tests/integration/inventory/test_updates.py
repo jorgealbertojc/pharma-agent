@@ -14,11 +14,11 @@ from unittest.mock import MagicMock
 import pytest
 import redis
 
-from src.core.config import settings
-from src.inventory.cache import InventoryCache
-from src.inventory.client import InventoryClient
-from src.inventory.updates import InventoryUpdater
-from src.inventory.schema import Inventario, Medicamento
+from app.core.config import settings
+from app.inventory.cache import InventoryCache
+from app.inventory.client import InventoryClient
+from app.inventory.updates import InventoryUpdater
+from app.inventory.schema import Inventario, Medicamento
 
 
 @pytest.fixture(scope="function")
@@ -180,7 +180,7 @@ class TestInventoryUpdater:
         Then: Se ignora la caché, se consulta Google Sheets y se actualiza la caché.
         """
         # Given: poblar caché con datos viejos
-        from src.inventory.schema import Medicamento
+        from app.inventory.schema import Medicamento
         old_inventory = Inventario(
             medicamentos=[Medicamento(
                 codigo="888",

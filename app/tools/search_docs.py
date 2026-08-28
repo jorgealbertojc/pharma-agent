@@ -9,7 +9,7 @@ contraindicaciones, dosis, etc.
 
 from typing import List, Optional
 
-from src.rag.retriever import Retriever
+from app.rag.retriever import Retriever
 from .format_response import ResponseFormatter
 
 

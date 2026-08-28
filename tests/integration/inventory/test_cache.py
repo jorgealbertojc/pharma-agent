@@ -12,10 +12,10 @@ import redis
 
 from typing import Iterator
 
-from src.core.config import settings
-from src.inventory.cache import InventoryCache
-from src.inventory.client import InventoryClient
-from src.inventory.schema import Inventario
+from app.core.config import settings
+from app.inventory.cache import InventoryCache
+from app.inventory.client import InventoryClient
+from app.inventory.schema import Inventario
 
 
 @pytest.fixture(scope="function")

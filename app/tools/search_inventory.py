@@ -8,7 +8,7 @@ y devuelve los resultados formateados o en bruto.
 
 from typing import List, Optional
 
-from src.inventory.schema import Inventario, Medicamento
+from app.inventory.schema import Inventario, Medicamento
 from .format_response import ResponseFormatter
 
 

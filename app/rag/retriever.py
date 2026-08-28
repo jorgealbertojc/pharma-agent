@@ -9,9 +9,9 @@ from langchain_core.documents import Document
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 
-from src.core.config import settings as default_settings
-from src.rag.embeddings import get_embeddings
-from src.rag.enums import SearchType
+from app.core.config import settings as default_settings
+from app.rag.embeddings import get_embeddings
+from app.rag.enums import SearchType
 
 
 class Retriever:

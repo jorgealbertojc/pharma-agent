@@ -8,7 +8,7 @@ ya que solo verifican la construcción y formateo de prompts.
 import pytest
 from langchain_core.prompts import ChatPromptTemplate
 
-from src.rag.prompts import RAGPrompt
+from app.rag.prompts import RAGPrompt
 
 
 class TestRAGPrompt:

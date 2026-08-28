@@ -6,7 +6,7 @@ configurado con los parámetros del archivo .env (host y modelo).
 """
 
 from langchain_ollama import OllamaEmbeddings
-from src.core.config import settings
+from app.core.config import settings
 
 
 def get_embeddings() -> OllamaEmbeddings:

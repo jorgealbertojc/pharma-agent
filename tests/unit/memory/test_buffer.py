@@ -13,7 +13,7 @@ Verifica:
 
 import pytest
 
-from src.memory.buffer import BufferMemory
+from app.memory.buffer import BufferMemory
 
 
 class TestBufferMemory:

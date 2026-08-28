@@ -20,10 +20,10 @@ from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 
-from src.core.config import settings
-from src.inventory.schema import Inventario, Medicamento
-from src.rag.retriever import Retriever
-from src.tools import SearchDocs, SearchInventory, SuggestUpsell, ResponseFormatter
+from app.core.config import settings
+from app.inventory.schema import Inventario, Medicamento
+from app.rag.retriever import Retriever
+from app.tools import SearchDocs, SearchInventory, SuggestUpsell, ResponseFormatter
 
 from .state import AgentState
 

@@ -10,9 +10,9 @@ Requiere:
 
 import pytest
 
-from src.inventory.client import InventoryClient
-from src.inventory.schema import Inventario
-from src.tools.suggest_upsell import SuggestUpsell
+from app.inventory.client import InventoryClient
+from app.inventory.schema import Inventario
+from app.tools.suggest_upsell import SuggestUpsell
 
 
 @pytest.fixture(scope="module")

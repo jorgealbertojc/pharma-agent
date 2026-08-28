@@ -9,14 +9,14 @@ from pathlib import Path
 
 import pytest
 
-from src.core.config import settings
-from src.rag.retriever import Retriever
-from src.rag.indexer import Indexer
-from src.rag.enums import SearchType
-from src.inventory.client import InventoryClient
-from src.agent.graph import build_agent_graph
-from src.agent.nodes import AgentNodes
-from src.agent.state import create_initial_state
+from app.core.config import settings
+from app.rag.retriever import Retriever
+from app.rag.indexer import Indexer
+from app.rag.enums import SearchType
+from app.inventory.client import InventoryClient
+from app.agent.graph import build_agent_graph
+from app.agent.nodes import AgentNodes
+from app.agent.state import create_initial_state
 
 
 @pytest.fixture(scope="module")

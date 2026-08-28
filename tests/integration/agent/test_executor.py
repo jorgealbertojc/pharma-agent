@@ -13,7 +13,7 @@ from unittest.mock import patch
 from io import StringIO
 import sys
 
-from src.agent.executor import AgentExecutor
+from app.agent.executor import AgentExecutor
 
 
 @pytest.fixture(scope="class", autouse=True)
@@ -65,7 +65,7 @@ class TestAgentExecutor:
         """
         executor = self.executor
         # Inicializar estado manualmente
-        from src.agent.state import create_initial_state
+        from app.agent.state import create_initial_state
         executor.state = create_initial_state("")
         initial_messages_count = len(executor.state.get("messages", []))
 

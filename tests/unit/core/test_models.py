@@ -8,7 +8,7 @@ Verifica la creación y validación de QueryRequest, AgentResponse y ErrorRespon
 import pytest
 from pydantic import ValidationError
 
-from src.core.models import QueryRequest, AgentResponse, ErrorResponse
+from app.core.models import QueryRequest, AgentResponse, ErrorResponse
 
 
 class TestQueryRequest:

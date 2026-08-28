@@ -1,6 +1,6 @@
 from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from src.core.enums import Environments, IndexMetric, LogLevels
+from app.core.enums import Environments, IndexMetric, LogLevels
 
 
 class Settings(BaseSettings):

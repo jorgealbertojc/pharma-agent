@@ -9,7 +9,7 @@ JSON, texto plano, y estructuras para el agente.
 import json
 from typing import List, Dict, Any, Optional, Union
 
-from src.inventory.schema import Medicamento
+from app.inventory.schema import Medicamento
 
 
 class ResponseFormatter:

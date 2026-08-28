@@ -10,7 +10,7 @@ la toma del medicamento.
 
 from typing import List, Optional, Dict, Any
 
-from src.inventory.schema import Inventario, Medicamento
+from app.inventory.schema import Inventario, Medicamento
 from .format_response import ResponseFormatter
 from .search_inventory import SearchInventory
 
