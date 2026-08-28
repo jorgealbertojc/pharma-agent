@@ -20,14 +20,14 @@ import pytest
 from pinecone import Pinecone
 from langchain_core.messages import HumanMessage, AIMessage
 
-from src.core.config import settings
-from src.inventory import InventoryClient, Inventario
-from src.rag.indexer import Indexer
-from src.rag.retriever import Retriever
-from src.rag.enums import SearchType
-from src.tools.search_docs import SearchDocs
-from src.agent.nodes import AgentNodes
-from src.agent.state import create_initial_state
+from app.core.config import settings
+from app.inventory import InventoryClient, Inventario
+from app.rag.indexer import Indexer
+from app.rag.retriever import Retriever
+from app.rag.enums import SearchType
+from app.tools.search_docs import SearchDocs
+from app.agent.nodes import AgentNodes
+from app.agent.state import create_initial_state
 
 
 # ============================================================

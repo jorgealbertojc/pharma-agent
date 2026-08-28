@@ -10,13 +10,13 @@ import logging
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import HumanMessage, AIMessage
 
-from src.core.config import settings
-from src.rag.retriever import Retriever
-from src.rag.enums import SearchType
-from src.inventory.client import InventoryClient
-from src.agent.state import AgentState, create_initial_state, add_message_to_state
-from src.agent.nodes import AgentNodes
-from src.tools import ResponseFormatter
+from app.core.config import settings
+from app.rag.retriever import Retriever
+from app.rag.enums import SearchType
+from app.inventory.client import InventoryClient
+from app.agent.state import AgentState, create_initial_state, add_message_to_state
+from app.agent.nodes import AgentNodes
+from app.tools import ResponseFormatter
 
 logger = logging.getLogger(__name__)
 

@@ -10,8 +10,8 @@ import argparse
 import sys
 import logging
 
-from src.agent.executor import AgentExecutor
-from src.core.config import settings
+from app.agent.executor import AgentExecutor
+from app.core.config import settings
 
 # Configurar logging para CLI (más silencioso por defecto)
 logging.basicConfig(level=logging.WARNING)

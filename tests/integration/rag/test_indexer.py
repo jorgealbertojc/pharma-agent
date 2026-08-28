@@ -13,9 +13,9 @@ from typing import Iterator
 import pytest
 from _pytest.tmpdir import TempPathFactory
 
-from src.core import config
-from src.core.config import Settings
-from src.rag.indexer import Indexer
+from app.core import config
+from app.core.config import Settings
+from app.rag.indexer import Indexer
 
 
 # ------------------------------------------------------------

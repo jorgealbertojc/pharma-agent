@@ -16,8 +16,8 @@ import tempfile
 
 from pydantic import ValidationError
 
-from src.core.config import Settings
-from src.core.enums import Environments, LogLevels, IndexMetric
+from app.core.config import Settings
+from app.core.enums import Environments, LogLevels, IndexMetric
 
 
 class TestConfig:

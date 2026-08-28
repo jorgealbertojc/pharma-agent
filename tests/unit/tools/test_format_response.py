@@ -10,8 +10,8 @@ import json
 
 import pytest
 
-from src.tools.format_response import ResponseFormatter
-from src.inventory.schema import Medicamento
+from app.tools.format_response import ResponseFormatter
+from app.inventory.schema import Medicamento
 
 
 class TestResponseFormatter:

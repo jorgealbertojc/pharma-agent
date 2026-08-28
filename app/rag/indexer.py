@@ -11,8 +11,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 
-from src.core.config import settings as default_settings
-from src.rag.embeddings import get_embeddings
+from app.core.config import settings as default_settings
+from app.rag.embeddings import get_embeddings
 
 
 class Indexer:

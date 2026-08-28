@@ -10,7 +10,7 @@ import sys
 import subprocess
 import pytest
 
-from src.entrypoints.cli import main
+from app.entrypoints.cli import main
 
 
 class TestCLI:

@@ -8,8 +8,8 @@ Requiere:
 
 import pytest
 
-from src.inventory.client import InventoryClient
-from src.inventory.schema import Medicamento, Inventario
+from app.inventory.client import InventoryClient
+from app.inventory.schema import Medicamento, Inventario
 
 
 class TestInventoryClient:

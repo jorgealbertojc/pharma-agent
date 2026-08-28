@@ -11,7 +11,7 @@ Requiere:
 
 import pytest
 from fastapi.testclient import TestClient
-from src.entrypoints.api import app, get_executor
+from app.entrypoints.api import app, get_executor
 
 
 @pytest.fixture(scope="function")

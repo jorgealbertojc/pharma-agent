@@ -15,8 +15,8 @@ import redis
 
 from typing import Iterator
 
-from src.core.config import settings
-from src.memory.persistent import PersistentMemory
+from app.core.config import settings
+from app.memory.persistent import PersistentMemory
 
 
 # ------------------------------------------------------------

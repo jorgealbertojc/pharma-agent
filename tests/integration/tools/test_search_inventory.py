@@ -9,9 +9,9 @@ con datos reales del inventario.
 
 import pytest
 
-from src.inventory.client import InventoryClient
-from src.inventory.schema import Inventario
-from src.tools.search_inventory import SearchInventory
+from app.inventory.client import InventoryClient
+from app.inventory.schema import Inventario
+from app.tools.search_inventory import SearchInventory
 
 
 @pytest.fixture(scope="module")

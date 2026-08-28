@@ -9,7 +9,7 @@ Verifican:
 
 import pytest
 
-from src.memory import BaseMemory
+from app.memory import BaseMemory
 
 
 # ------------------------------------------------------------

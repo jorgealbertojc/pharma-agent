@@ -8,7 +8,7 @@ y los métodos de búsqueda y filtrado de Inventario.
 
 import pytest
 
-from src.inventory.schema import Medicamento, Inventario
+from app.inventory.schema import Medicamento, Inventario
 
 
 class TestMedicamento:

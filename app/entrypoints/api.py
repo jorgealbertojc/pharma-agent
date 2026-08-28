@@ -14,11 +14,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
-from src.core.config import settings
-from src.core.exceptions import AppException, AgentError
-from src.core.models import QueryRequest, AgentResponse, ErrorResponse
-from src.agent.executor import AgentExecutor
-from src.agent.state import create_initial_state, add_message_to_state
+from app.core.config import settings
+from app.core.exceptions import AppException, AgentError
+from app.core.models import QueryRequest, AgentResponse, ErrorResponse
+from app.agent.executor import AgentExecutor
+from app.agent.state import create_initial_state, add_message_to_state
 from langchain_core.messages import HumanMessage, AIMessage
 
 logger = logging.getLogger(__name__)

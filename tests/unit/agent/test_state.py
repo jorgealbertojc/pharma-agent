@@ -9,7 +9,7 @@ y el correcto tipado de los campos del estado.
 import pytest
 from langchain_core.messages import HumanMessage, AIMessage
 
-from src.agent.state import AgentState, create_initial_state, add_message_to_state
+from app.agent.state import AgentState, create_initial_state, add_message_to_state
 
 
 class TestAgentState:

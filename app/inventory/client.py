@@ -9,7 +9,7 @@ from typing import List, Optional, Dict, Any
 import gspread
 from google.oauth2.service_account import Credentials
 
-from src.core.config import settings as default_settings
+from app.core.config import settings as default_settings
 from .schema import Medicamento, Inventario
 
 logger = logging.getLogger(__name__)
