@@ -86,6 +86,35 @@ services:
     networks:
       - pharma-net
 
+    # ============================================================
+  # 5. Floci (emulador de AWS local)
+  # ============================================================
+  floci:
+    image: floci/floci:latest
+    container_name: lab-floci
+    restart: unless-stopped
+    ports:
+      - "4566:4566"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - floci_data:/app/data
+    environment:
+      - FLOCI_STORAGE_MODE=hybrid
+      - FLOCI_STORAGE_PERSISTENT_PATH=/app/data
+      - FLOCI_STORAGE_WAL_COMPACTION_INTERVAL_MS=15000
+      - FLOCI_STORAGE_HYBRID_FLUSH_INTERVAL_MS=2000
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    networks:
+      - pharma-net
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+
 # ============================================================
 # Volúmenes persistentes
 # ============================================================
@@ -93,6 +122,8 @@ volumes:
   ollama_data:
     driver: local
   redis_data:
+    driver: local
+  floci_data:
     driver: local
 
 # ============================================================
