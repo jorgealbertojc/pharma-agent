@@ -5,6 +5,7 @@ description = "AI-powered pharmacy assistant"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "boto3>=1.43.89",
     "fastapi>=0.141.1",
     "google-auth>=2.57.0",
     "gspread>=6.2.1",
@@ -30,3 +31,7 @@ pythonpath = ["."]
 
 [tool.uv.workspace]
 members = ["."]
+
+[dependency-groups]
+dev = [
+]

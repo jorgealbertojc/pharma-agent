@@ -46,6 +46,25 @@ class Settings(BaseSettings):
     REDIS_TTL_SECONDS: int | None = None    # None = sin expiración
 
     # ------------------------------------------------------------
+    # DynamoDB (reemplazo de Redis)
+    # ------------------------------------------------------------
+    # Tabla para historial de conversaciones (obligatoria)
+    DYNAMODB_CHAT_HISTORY_TABLE: str
+
+    # Tabla para caché de inventario (obligatoria)
+    DYNAMODB_INVENTORY_CACHE_TABLE: str
+
+    # Endpoint de DynamoDB (con valor por defecto para Floci)
+    DYNAMODB_ENDPOINT_URL: str = "http://localhost:4566"
+
+    # Región de AWS (con valor por defecto para Floci)
+    DYNAMODB_REGION: str = "us-east-1"
+
+    # Credenciales dummy para Floci (con valor por defecto)
+    DYNAMODB_ACCESS_KEY_ID: str = "test"
+    DYNAMODB_SECRET_ACCESS_KEY: str = "test"
+
+    # ------------------------------------------------------------
     # Google Sheets (Inventario)
     # ------------------------------------------------------------
     GOOGLE_APPLICATION_CREDENTIALS: str = ""  # Ruta al archivo JSON de la cuenta de servicio
