@@ -152,3 +152,14 @@ class NotFoundError(AppException):
     Ej: sesión no encontrada, ítem no encontrado.
     """
     pass
+
+
+# ------------------------------------------------------------
+# Excepciones para servicios de cache
+# ------------------------------------------------------------
+class CacheError(AppException):
+    """
+    Error en operaciones de cache.
+    Ej: error al leer/escribir en cache.
+    """
+    pass

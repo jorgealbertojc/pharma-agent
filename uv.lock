@@ -1526,11 +1526,6 @@ dependencies = [
     { name = "uvicorn" },
 ]
 
-[package.dev-dependencies]
-dev = [
-    { name = "boto3" },
-]
-
 [package.metadata]
 requires-dist = [
     { name = "boto3", specifier = ">=1.43.89" },
@@ -1555,7 +1550,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "boto3", specifier = ">=1.43.89" }]
+dev = []
 
 [[package]]
 name = "pinecone"
