@@ -163,3 +163,13 @@ class CacheError(AppException):
     Ej: error al leer/escribir en cache.
     """
     pass
+
+# ------------------------------------------------------------
+# Excepciones para servicios de RAG
+# ------------------------------------------------------------
+class RAGError(AppException):
+    """
+    Error en operaciones de cacheRAG.
+    Ej: el servicio de rag está disponible.
+    """
+    pass

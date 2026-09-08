@@ -65,6 +65,27 @@ class Settings(BaseSettings):
     DYNAMODB_SECRET_ACCESS_KEY: str = "test"
 
     # ------------------------------------------------------------
+    # OpenSearch (reemplazo de Pinecone)
+    # ------------------------------------------------------------
+    # Host y puerto de OpenSearch
+    OPENSEARCH_HOST: str = "localhost"
+    OPENSEARCH_PORT: int = 4566
+
+    # Índice de vectores (obligatorio)
+    OPENSEARCH_INDEX_NAME: str
+
+    # Dimensión de los vectores (obligatorio)
+    OPENSEARCH_INDEX_DIMENSIONS: int
+
+    # Métrica de similitud (opcional, con valor por defecto)
+    OPENSEARCH_INDEX_METRIC: str = "cosine"
+
+    # Credenciales para OpenSearch (opcional, para Floci)
+    OPENSEARCH_ACCESS_KEY_ID: str = "test"
+    OPENSEARCH_SECRET_ACCESS_KEY: str = "test"
+    OPENSEARCH_REGION: str = "us-east-1"
+
+    # ------------------------------------------------------------
     # Google Sheets (Inventario)
     # ------------------------------------------------------------
     GOOGLE_APPLICATION_CREDENTIALS: str = ""  # Ruta al archivo JSON de la cuenta de servicio

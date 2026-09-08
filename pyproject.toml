@@ -16,6 +16,7 @@ dependencies = [
     "langchain-openai>=1.4.2",
     "langchain-pinecone>=0.2.13",
     "langgraph>=0.6.0",
+    "opensearch-py>=3.2.0",
     "pinecone>=7.3.0",
     "pydantic-settings>=2.14.2",
     "pytest>=9.1.1",
