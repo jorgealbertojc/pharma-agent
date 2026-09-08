@@ -10,6 +10,7 @@ dependencies = [
     "google-auth>=2.57.0",
     "gspread>=6.2.1",
     "langchain-anthropic>=1.5.4",
+    "langchain-aws>=1.7.5",
     "langchain-community>=0.4.2",
     "langchain-core>=1.6.0",
     "langchain-ollama>=1.1.0",

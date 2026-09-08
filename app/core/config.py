@@ -86,6 +86,23 @@ class Settings(BaseSettings):
     OPENSEARCH_REGION: str = "us-east-1"
 
     # ------------------------------------------------------------
+    # Bedrock (reemplazo de Ollama)
+    # ------------------------------------------------------------
+    # Región de AWS (obligatoria)
+    BEDROCK_REGION: str
+
+    # Modelos (obligatorios)
+    BEDROCK_EMBEDDINGS_MODEL: str
+    BEDROCK_LLM_MODEL: str
+
+    # Endpoint de Bedrock (con valor por defecto para Floci)
+    BEDROCK_ENDPOINT_URL: str = "http://localhost:4566"
+
+    # Credenciales dummy para Floci (con valor por defecto)
+    BEDROCK_ACCESS_KEY_ID: str = "test"
+    BEDROCK_SECRET_ACCESS_KEY: str = "test"
+
+    # ------------------------------------------------------------
     # Google Sheets (Inventario)
     # ------------------------------------------------------------
     GOOGLE_APPLICATION_CREDENTIALS: str = ""  # Ruta al archivo JSON de la cuenta de servicio
