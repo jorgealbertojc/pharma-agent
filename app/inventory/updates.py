@@ -1,14 +1,13 @@
-# src/inventory/updates.py
+# app/inventory/updates.py
 """
-Orquestador de actualizaciones del inventario.
+Inventory update orchestrator.
 
-Este módulo coordina la obtención del inventario, decidiendo si usar
-la caché (Redis) o consultar directamente a Google Sheets cuando
-la caché está vacía o se fuerza una actualización.
+This module coordinates inventory retrieval, deciding whether to use
+the cache (DynamoDB) or query Google Sheets directly when the cache
+is empty or a forced refresh is requested.
 """
 
 import logging
-from typing import Optional
 
 from .client import InventoryClient
 from .cache import InventoryCache
@@ -19,11 +18,11 @@ logger = logging.getLogger(__name__)
 
 class InventoryUpdater:
     """
-    Coordina la obtención del inventario, usando caché cuando esté disponible.
+    Coordinates inventory retrieval, using cache when available.
 
     Args:
-        client: Cliente para obtener datos desde Google Sheets.
-        cache: Gestor de caché en Redis.
+        client: Client to fetch data from Google Sheets.
+        cache: Cache manager backed by DynamoDB.
     """
 
     def __init__(self, client: InventoryClient, cache: InventoryCache):
@@ -32,45 +31,47 @@ class InventoryUpdater:
 
     def get_inventory(self, force: bool = False) -> Inventario:
         """
-        Obtiene el inventario actual.
+        Retrieve the current inventory.
 
-        Si force=True, ignora la caché y consulta siempre a Google Sheets.
-        Si force=False, intenta obtener de caché; si no existe, consulta y guarda.
+        If force=True, ignores the cache and always queries Google Sheets.
+        If force=False, attempts to read from cache; if missing or expired,
+        queries Google Sheets and stores the result in cache.
+
+        Args:
+            force: If True, bypass the cache and fetch fresh data.
 
         Returns:
-            Inventario con los datos más recientes.
+            Inventario with the most recent data.
         """
         if force:
-            logger.info("Forzando actualización desde Google Sheets.")
+            logger.info("Forcing refresh from Google Sheets.")
             return self._fetch_and_cache()
 
         cached = self.cache.get()
         if cached is not None:
-            logger.info("Inventario obtenido desde caché.")
+            logger.info("Inventory retrieved from cache.")
             return cached
 
-        logger.info("Caché vacía o expirada. Consultando Google Sheets.")
+        logger.info("Cache empty or expired. Fetching from Google Sheets.")
         return self._fetch_and_cache()
 
     def force_refresh(self) -> Inventario:
         """
-        Fuerza una actualización completa desde Google Sheets
-        y actualiza la caché.
+        Force a full refresh from Google Sheets and update the cache.
 
         Returns:
-            Inventario con datos frescos.
+            Inventario with fresh data.
         """
         return self._fetch_and_cache()
 
     def _fetch_and_cache(self) -> Inventario:
         """
-        Obtiene el inventario desde Google Sheets, lo guarda en caché
-        y lo retorna.
+        Fetch inventory from Google Sheets, store it in cache, and return it.
 
         Returns:
-            Inventario con los datos recién obtenidos.
+            Inventario with newly fetched data.
         """
         inventario = self.client.fetch_inventory()
         self.cache.set(inventario)
-        logger.info(f"Inventario actualizado con {len(inventario.medicamentos)} medicamentos.")
+        logger.info(f"Inventory updated with {len(inventario.medicamentos)} medicamentos.")
         return inventario

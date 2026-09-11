@@ -1,26 +1,28 @@
+# tests/integration/entrypoints/test_cli.py
 """
-Tests de integración para el punto de entrada CLI.
+Integration tests for the CLI entrypoint.
 
-Estos tests verifican el comportamiento del CLI sin usar subprocess
-(excepto para el modo interactivo), capturando la salida directamente
-con capsys y monkeypatch.
+These tests verify the CLI behavior without using subprocess
+(except for interactive mode), capturing output directly
+with capsys and monkeypatch.
 """
 
-import sys
 import subprocess
+import sys
+
 import pytest
 
 from app.entrypoints.cli import main
 
 
 class TestCLI:
-    """Suite de pruebas para el CLI."""
+    """Test suite for the CLI."""
 
     def test_cli_help(self, capsys, monkeypatch) -> None:
         """
-        Given: El CLI ejecutado con el argumento --help.
-        When: Se ejecuta main() con sys.argv modificado.
-        Then: Se muestra la ayuda y el código de salida es 0.
+        Given: The CLI executed with the --help argument.
+        When: main() is run with modified sys.argv.
+        Then: Help is displayed and exit code is 0.
         """
         # Given
         monkeypatch.setattr(sys, 'argv', ['cli.py', '--help'])
@@ -32,13 +34,13 @@ class TestCLI:
         # Then
         assert exc_info.value.code == 0
         captured = capsys.readouterr()
-        assert "Agente farmacéutico" in captured.out
+        assert "Pharmacy agent" in captured.out  # Updated to match new English description
 
     def test_cli_question_single_query(self, capsys, monkeypatch) -> None:
         """
-        Given: Una pregunta válida pasada con --question.
-        When: Se ejecuta main() con la pregunta.
-        Then: Se imprime una respuesta no vacía sin errores.
+        Given: A valid question passed with --question.
+        When: main() is run with the question.
+        Then: A non-empty response is printed without errors.
         """
         # Given
         monkeypatch.setattr(sys, 'argv', ['cli.py', '--question', 'ibuprofeno'])
@@ -53,9 +55,9 @@ class TestCLI:
 
     def test_cli_question_with_debug(self, capsys, monkeypatch) -> None:
         """
-        Given: Una pregunta con el flag --debug.
-        When: Se ejecuta main() con la pregunta y debug activado.
-        Then: No hay errores y la salida contiene al menos la respuesta.
+        Given: A question with the --debug flag.
+        When: main() is run with the question and debug enabled.
+        Then: No errors occur and the output contains at least the response.
         """
         # Given
         monkeypatch.setattr(sys, 'argv', ['cli.py', '--question', 'paracetamol', '--debug'])
@@ -69,9 +71,9 @@ class TestCLI:
 
     def test_cli_question_unknown_product(self, capsys, monkeypatch) -> None:
         """
-        Given: Una pregunta sobre un producto inexistente.
-        When: Se ejecuta main() con esa pregunta.
-        Then: El agente maneja la situación sin errores y devuelve un mensaje informativo.
+        Given: A question about a non-existent product.
+        When: main() is run with that question.
+        Then: The agent handles the situation without errors and returns an informative message.
         """
         # Given
         monkeypatch.setattr(sys, 'argv', ['cli.py', '--question', 'producto_inexistente_xyz'])
@@ -83,25 +85,25 @@ class TestCLI:
         captured = capsys.readouterr()
         assert len(captured.out.strip()) > 0
 
-    @pytest.mark.skip(reason="El modo interactivo requiere entrada estándar y timeout, no es adecuado para CI/local")
+    @pytest.mark.skip(reason="Interactive mode requires stdin and timeout; not suitable for CI/local")
     def test_cli_no_question_enters_interactive_mode(self) -> None:
         """
-        Given: El CLI ejecutado sin --question.
-        When: Se ejecuta el comando con subprocess y timeout de 8 segundos.
-        Then: Entra en modo interactivo y muestra el mensaje de bienvenida.
+        Given: The CLI executed without --question.
+        When: The command is run with subprocess and an 8-second timeout.
+        Then: It enters interactive mode and shows the welcome message.
         """
         # Given / When
         try:
             subprocess.run(
-                [sys.executable, "-m", "src.entrypoints.cli"],
+                [sys.executable, "-m", "app.entrypoints.cli"],
                 capture_output=True,
                 text=True,
-                timeout=240,  # Aumentado para dar tiempo a la inicialización
+                timeout=240,  # Increased to allow initialization
             )
         except subprocess.TimeoutExpired as e:
             # Then
             output = e.stdout if e.stdout else ""
-            assert "Agente farmacéutico iniciado" in output, \
-                f"El mensaje de bienvenida no apareció en la salida (recibido: {output[:100]})"
+            assert "Pharmacy agent started" in output, \
+                f"Welcome message did not appear in output (received: {output[:100]})"
         else:
-            pytest.fail("El CLI debería haber entrado en modo interactivo y no terminar inmediatamente.")
+            pytest.fail("CLI should have entered interactive mode and not terminated immediately.")

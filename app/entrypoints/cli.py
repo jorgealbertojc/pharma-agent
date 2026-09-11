@@ -1,26 +1,25 @@
-# src/entrypoints/cli.py
+# app/entrypoints/cli.py
 """
-Punto de entrada para la línea de comandos (CLI) del agente farmacéutico.
+Command-line interface (CLI) entrypoint for the pharmacy agent.
 
-Permite ejecutar el agente en modo interactivo (bucle de preguntas/respuestas)
-o realizar una consulta única pasando la pregunta como argumento.
+Provides an interactive mode (question/answer loop) and a single-query
+mode by passing the question as an argument.
 """
 
 import argparse
-import sys
 import logging
+import sys
 
 from app.agent.executor import AgentExecutor
-from app.core.config import settings
 
-# Configurar logging para CLI (más silencioso por defecto)
+# Configure logging for CLI (quieter by default)
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
 
 def run_interactive() -> None:
     """
-    Ejecuta el agente en modo interactivo (bucle infinito).
+    Run the agent in interactive mode (infinite loop).
     """
     executor = AgentExecutor()
     executor.run()
@@ -28,13 +27,12 @@ def run_interactive() -> None:
 
 def run_single_query(question: str) -> None:
     """
-    Ejecuta una consulta única y muestra la respuesta.
+    Run a single query and print the response.
 
     Args:
-        question: Pregunta del usuario.
+        question: User's question.
     """
     executor = AgentExecutor()
-    # Procesar la pregunta directamente (reutiliza la lógica interna)
     try:
         executor._process_question(question)
         final_answer = executor.state.get("final_answer") if executor.state else None
@@ -45,28 +43,29 @@ def run_single_query(question: str) -> None:
             if error:
                 print(f"Error: {error}", file=sys.stderr)
             else:
-                print("No se pudo generar una respuesta.", file=sys.stderr)
+                print("Could not generate a response.", file=sys.stderr)
+                sys.exit(1)
     except Exception as e:
-        print(f"Error inesperado: {e}", file=sys.stderr)
+        print(f"Unexpected error: {e}", file=sys.stderr)
         sys.exit(1)
 
 
 def main() -> None:
     """
-    Punto de entrada principal del CLI.
+    Main entrypoint for the CLI.
     """
     parser = argparse.ArgumentParser(
-        description="Agente farmacéutico - consulta medicamentos, inventario y sugerencias."
+        description="Pharmacy agent - query medications, inventory, and suggestions."
     )
     parser.add_argument(
         "--question", "-q",
         type=str,
-        help="Pregunta única para el agente (si no se proporciona, entra en modo interactivo)."
+        help="Single question for the agent (if omitted, enters interactive mode).",
     )
     parser.add_argument(
         "--debug",
         action="store_true",
-        help="Activar modo debug (logs más detallados)."
+        help="Enable debug mode (verbose logs).",
     )
     args = parser.parse_args()
 
