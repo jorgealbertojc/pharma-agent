@@ -1,17 +1,16 @@
+# app/inventory/cache.py
 """
-Caché para el inventario usando Redis.
+Caché para el inventario usando DynamoDB (reemplazo de Redis).
 
-Permite almacenar el inventario completo en Redis para reducir
+Permite almacenar el inventario completo en DynamoDB para reducir
 las llamadas a la API de Google Sheets. La caché se invalida
 mediante TTL (time-to-live) o manualmente.
 """
 
-import json
 import logging
 from typing import Optional
 
-import redis
-
+from app.aws.dynamodb import create_dynamodb_cache, DynamoDBCache
 from .schema import Inventario
 
 logger = logging.getLogger(__name__)
@@ -19,45 +18,42 @@ logger = logging.getLogger(__name__)
 
 class InventoryCache:
     """
-    Gestor de caché del inventario en Redis.
+    Gestor de caché del inventario en DynamoDB.
 
     Args:
-        redis_client: Cliente Redis ya conectado.
-        key: Clave de Redis donde se almacenará el inventario.
+        cache_key: Clave de DynamoDB donde se almacenará el inventario.
         ttl: Tiempo de vida en segundos (None = sin expiración).
+        table_name: Nombre de la tabla DynamoDB (opcional, por defecto usa settings).
     """
 
     def __init__(
         self,
-        redis_client: redis.Redis,
-        key: str = "inventory:cache",
+        cache_key: str = "inventory",
         ttl: Optional[int] = None,
+        table_name: Optional[str] = None,
     ):
-        self.redis_client = redis_client
-        self.key = key
+        self.cache_key = cache_key
         self.ttl = ttl
+
+        # Crear la instancia de DynamoDBCache usando la fábrica
+        self._cache: DynamoDBCache = create_dynamodb_cache(
+            table_name=table_name,
+            cache_key=cache_key,
+            ttl=ttl,
+        )
 
     def get(self) -> Optional[Inventario]:
         """
-        Recupera el inventario desde Redis.
+        Recupera el inventario desde DynamoDB.
 
         Returns:
             Instancia de Inventario si existe y es válida, o None si no hay caché.
         """
-        try:
-            raw = self.redis_client.get(self.key)
-            if raw is None:
-                logger.debug("Caché de inventario vacío o expirado.")
-                return None
-            data = json.loads(raw)
-            return Inventario(**data)
-        except (json.JSONDecodeError, TypeError, redis.RedisError) as e:
-            logger.error(f"Error al recuperar caché de inventario: {e}")
-            return None
+        return self._cache.get()
 
     def set(self, inventario: Inventario) -> bool:
         """
-        Almacena el inventario en Redis.
+        Almacena el inventario en DynamoDB.
 
         Args:
             inventario: Objeto Inventario a cachear.
@@ -65,16 +61,7 @@ class InventoryCache:
         Returns:
             True si se guardó correctamente, False en caso de error.
         """
-        try:
-            raw = inventario.model_dump_json()
-            self.redis_client.set(self.key, raw)
-            if self.ttl is not None:
-                self.redis_client.expire(self.key, self.ttl)
-            logger.info(f"Inventario cacheado correctamente (TTL={self.ttl}s)")
-            return True
-        except (TypeError, redis.RedisError) as e:
-            logger.error(f"Error al cachear inventario: {e}")
-            return False
+        return self._cache.set(inventario)
 
     def clear(self) -> bool:
         """
@@ -83,31 +70,13 @@ class InventoryCache:
         Returns:
             True si se eliminó, False si no existía o hubo error.
         """
-        try:
-            deleted = self.redis_client.delete(self.key)
-            if deleted:
-                logger.info("Caché de inventario eliminada.")
-            else:
-                logger.debug("Caché de inventario ya no existía.")
-            return bool(deleted)
-        except redis.RedisError as e:
-            logger.error(f"Error al limpiar caché de inventario: {e}")
-            return False
+        return self._cache.clear()
 
     def is_fresh(self) -> bool:
         """
         Verifica si la caché existe y no ha expirado.
 
         Returns:
-            True si la clave existe y tiene TTL > 0 (o no tiene TTL).
+            True si el ítem existe y no ha expirado.
         """
-        try:
-            exists = self.redis_client.exists(self.key)
-            if not exists:
-                return False
-            ttl = self.redis_client.ttl(self.key)
-            # TTL = -1 significa que la clave existe sin expiración
-            # TTL > 0 significa que aún no ha expirado
-            return ttl != -2
-        except redis.RedisError:
-            return False
+        return self._cache.is_fresh()
