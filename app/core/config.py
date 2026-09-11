@@ -1,11 +1,21 @@
+# app/core/config.py
+"""
+Application configuration.
+
+Loads environment variables from .env and exposes a global settings instance.
+All values are validated by Pydantic and immutable at runtime.
+"""
+
 from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from app.core.enums import Environments, IndexMetric, LogLevels
+
+from app.core.enums import Environments, LogLevels
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        # Ruta absoluta al .env en la raíz del proyecto (dos niveles arriba de src/core)
+        # Absolute path to .env at the project root (two levels up from app/core)
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",
@@ -13,123 +23,95 @@ class Settings(BaseSettings):
     )
 
     # ------------------------------------------------------------
-    # Entorno y logs
+    # Environment and logs
     # ------------------------------------------------------------
     AGENT_ENVIRONMENT: Environments = Environments.DEVELOPMENT
     AGENT_LOG_LEVEL: LogLevels = LogLevels.INFO
     AGENT_NAME: str = "pharma-assistant"
 
     # ------------------------------------------------------------
-    # Ollama / Modelos
+    # LLM (generic, applies to any provider)
     # ------------------------------------------------------------
-    IA_MODEL_HOST: str = "localhost"
-    IA_MODEL_EMBEDDED_NAME: str = "gpt4o-mini"
-    IA_MODEL_AGENT_NAME: str = "gpt4o-mini"
-    IA_MODEL_API_KEY: str = ""              # Ollama no requiere, pero se deja por compatibilidad
     IA_MODEL_TEMPERATURE: float = 0.0
 
     # ------------------------------------------------------------
-    # Pinecone
+    # DynamoDB (chat history and inventory cache)
     # ------------------------------------------------------------
-    PINECONE_HOST: str = "localhost"
-    PINECONE_INDEX_NAME: str = "lab"
-    PINECONE_INDEX_DIMENSIONS: int = 768
-    PINECONE_INDEX_METRIC: IndexMetric = IndexMetric.COSINE
-    PINECONE_API_KEY: str = "pclocal"
-
-    # ------------------------------------------------------------
-    # Redis
-    # ------------------------------------------------------------
-    REDIS_HOST: str = "localhost"
-    REDIS_PORT: int = 6379
-    REDIS_DB_INDEX: int = 0
-    REDIS_TTL_SECONDS: int | None = None    # None = sin expiración
-
-    # ------------------------------------------------------------
-    # DynamoDB (reemplazo de Redis)
-    # ------------------------------------------------------------
-    # Tabla para historial de conversaciones (obligatoria)
+    # Required table for chat history
     DYNAMODB_CHAT_HISTORY_TABLE: str
 
-    # Tabla para caché de inventario (obligatoria)
+    # Required table for inventory cache
     DYNAMODB_INVENTORY_CACHE_TABLE: str
 
-    # Endpoint de DynamoDB (con valor por defecto para Floci)
+    # Endpoint (default: Floci)
     DYNAMODB_ENDPOINT_URL: str = "http://localhost:4566"
 
-    # Región de AWS (con valor por defecto para Floci)
+    # AWS region
     DYNAMODB_REGION: str = "us-east-1"
 
-    # Credenciales dummy para Floci (con valor por defecto)
+    # Credentials (dummy values for Floci)
     DYNAMODB_ACCESS_KEY_ID: str = "test"
     DYNAMODB_SECRET_ACCESS_KEY: str = "test"
 
     # ------------------------------------------------------------
-    # OpenSearch (reemplazo de Pinecone)
+    # OpenSearch (vector store for RAG)
     # ------------------------------------------------------------
-    # Host y puerto de OpenSearch
     OPENSEARCH_HOST: str = "localhost"
-    OPENSEARCH_PORT: int = 4566
+    OPENSEARCH_PORT: int = 9400
 
-    # Índice de vectores (obligatorio)
+    # Required index name
     OPENSEARCH_INDEX_NAME: str
 
-    # Dimensión de los vectores (obligatorio)
+    # Required vector dimensions
     OPENSEARCH_INDEX_DIMENSIONS: int
 
-    # Métrica de similitud (opcional, con valor por defecto)
+    # Similarity metric (optional)
     OPENSEARCH_INDEX_METRIC: str = "cosine"
 
-    # Credenciales para OpenSearch (opcional, para Floci)
+    # Credentials (dummy values for Floci)
     OPENSEARCH_ACCESS_KEY_ID: str = "test"
     OPENSEARCH_SECRET_ACCESS_KEY: str = "test"
     OPENSEARCH_REGION: str = "us-east-1"
 
     # ------------------------------------------------------------
-    # Bedrock (reemplazo de Ollama)
+    # Bedrock (LLM and embeddings)
     # ------------------------------------------------------------
-    # Región de AWS (obligatoria)
+    # Required AWS region
     BEDROCK_REGION: str
 
-    # Modelos (obligatorios)
+    # Required model IDs
     BEDROCK_EMBEDDINGS_MODEL: str
     BEDROCK_LLM_MODEL: str
 
-    # Endpoint de Bedrock (con valor por defecto para Floci)
+    # Endpoint (default: Floci)
     BEDROCK_ENDPOINT_URL: str = "http://localhost:4566"
 
-    # Credenciales dummy para Floci (con valor por defecto)
+    # Credentials (dummy values for Floci)
     BEDROCK_ACCESS_KEY_ID: str = "test"
     BEDROCK_SECRET_ACCESS_KEY: str = "test"
 
     # ------------------------------------------------------------
-    # Google Sheets (Inventario)
+    # Google Sheets (inventory source)
     # ------------------------------------------------------------
-    GOOGLE_APPLICATION_CREDENTIALS: str = ""  # Ruta al archivo JSON de la cuenta de servicio
-    SPREADSHEET_ID: str = ""                  # ID del documento de Google Sheets
+    GOOGLE_APPLICATION_CREDENTIALS: str = ""
+    SPREADSHEET_ID: str = ""
 
     @classmethod
     def from_env_file(cls, env_file: Path | None = None) -> "Settings":
         """
-        Crea una instancia de Settings cargando variables desde un archivo .env específico.
+        Create a Settings instance loading variables from a specific .env file.
 
         Args:
-            env_file: Ruta al archivo .env. Si es None, se usa la ruta por defecto (raíz del proyecto).
+            env_file: Path to the .env file. If None, uses the default
+                      location at the project root.
 
         Returns:
-            Instancia de Settings con las variables del archivo indicado.
-
-        Uso:
-            # Para tests con archivo vacío o temporal
-            settings = Settings.from_env_file(Path("/dev/null"))
-
-            # Para usar un .env alternativo
-            settings = Settings.from_env_file(Path("config/test.env"))
+            Settings instance with variables loaded from the given file.
         """
         if env_file is None:
             env_file = Path(__file__).parent.parent.parent / ".env"
         return cls(_env_file=env_file)
 
 
-# Instancia global por defecto (carga el .env de la raíz del proyecto)
+# Global settings instance (loads .env from the project root)
 settings = Settings()
